@@ -1,12 +1,12 @@
 {
   "name": "Session Logger",
-  "version": "2.0.0",
-  "description": "Create comprehensive session log when agent stops",
+  "version": "3.0.0",
+  "description": "Create comprehensive session log - ONLY when user explicitly ends session (user-triggered)",
   "when": {
-    "type": "agentStop"
+    "type": "userTriggered"
   },
   "then": {
     "type": "askAgent",
-    "prompt": "📝 SESSION LOG:\n\nCreate session log at `.kiro/memory/sessions/YYYY-MM-DD-HH-MM-topic.md`:\n\n**Include:**\n- Session overview (date, duration, type)\n- Objectives and key findings\n- Decisions made with rationale\n- Actions taken with results\n- Metrics (files changed, tests added, issues found)\n- Lessons learned\n- Next steps\n\n**Update if needed:**\n- `.kiro/memory/team-context.md` (sprint info, decisions)\n- `.kiro/CHANGELOG.md` (significant changes)\n\nKeep concise but comprehensive."
+    "prompt": "📝 SESSION LOG:\n\nCreate session log at `.kiro/memory/sessions/YYYY-MM-DD-HH-MM-topic.md`:\n\n**Include:**\n- Session overview (date, duration, type)\n- Objectives and key findings\n- Decisions made with rationale\n- Actions taken with results\n- Metrics (files changed, tests added, issues found)\n- Lessons learned\n- Next steps\n\n**Update if needed:**\n- `.kiro/memory/team-context.md` (sprint info, decisions)\n- `.kiro/CHANGELOG.md` (significant changes)\n\nKeep concise but comprehensive.\n\n**IMPORTANT:** This should ONLY run when user explicitly wants to end the session, NOT during normal conversation flow."
   }
 }

@@ -9,6 +9,19 @@
 ## Active Features
 
 ### In Progress
+- **Automated Team Discussion Infrastructure** - Status: PHASE 0 COMPLETE ✅
+  - Phase 0: Foundation design (Complete)
+  - Phase 1: Core implementation (Pending approval)
+  - Phase 2: Consensus engine (Pending)
+  - Phase 3: Integration & testing (Pending)
+  - Timeline: 3 weeks
+  - Enables 100% autonomous team coordination
+- **Dev Team Mode Infrastructure Upgrade** - Status: APPROVED ✅
+  - Phase 1: Enhanced Quality Gates + GitHub Integration (2 weeks)
+  - Phase 2: Task Intelligence + Collaboration (3 weeks)
+  - Phase 3: Monitoring + Documentation (deferred)
+  - Timeline: 6 weeks with validation gates
+  - Awaiting user approval to start implementation
 - **Muh5 100% Autonomous Execution** - Status: ACTIVE 🚀
   - v4.1 (100% autonomous) activated
   - Task 3.5 completed autonomously

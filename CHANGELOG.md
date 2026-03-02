@@ -69,6 +69,28 @@ All notable changes to Dev Team Mode will be documented in this file.
 ## [Unreleased]
 
 ### Added
+- **Phase 2 Implementation: Context Router & Loop Prevention (2026-03-02):**
+  - Context-Aware Router with intelligent agent selection
+  - Complexity/risk/impact-based routing
+  - Domain and keyword-based routing
+  - Decision domain determination (5 types)
+  - Routing validation and confidence scoring
+  - Loop Prevention System with circular dependency detection
+  - Discussion Tracker with invocation chain management
+  - Timeout Manager (4 timeout types: 30s, 1min, 5min, 10s)
+  - Automatic cleanup of old discussions (1-hour retention)
+  - Max depth limit (10) and same-agent limit (3)
+  - Discussion statistics tracking
+- **Phase 1 Implementation: Message Bus & Agent Registry (2026-03-02):**
+  - Message Bus (TypeScript) with Pub/Sub pattern
+  - In-memory event-driven communication
+  - Agent Registry with capability mapping
+  - 5 agent roles with expertise domains
+  - Message validation and history tracking
+  - Subscription management with filtering
+  - Agent metrics tracking (invocations, success rate, response time)
+  - Singleton instances for global access
+  - Foundation for autonomous agent coordination
 - **Automated Team Discussion Infrastructure (2026-03-02):**
   - Agent Communication Architecture with event-driven message bus
   - Consensus & Decision Engine with voting-based algorithms

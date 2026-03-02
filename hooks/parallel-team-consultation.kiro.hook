@@ -1,12 +1,12 @@
 {
   "name": "Parallel Team Consultation",
   "version": "1.0.0",
-  "description": "User-triggered parallel consultation with all team members for complex decisions",
+  "description": "Manual trigger for on-demand team discussions. Use when you need team consensus for ad-hoc decisions outside of spec workflow. Invokes team-coordinator to orchestrate parallel consultation.",
   "when": {
     "type": "userTriggered"
   },
   "then": {
     "type": "askAgent",
-    "prompt": "Execute parallel team consultation:\n\nInvoke ALL sub-agents simultaneously:\n- product-owner-agent: Business perspective, ROI, user impact\n- tech-lead-agent: Technical architecture, design patterns, risks\n- senior-developer-agent: Implementation feasibility, effort estimation\n- qa-engineer-agent: Testing strategy, quality gates, edge cases\n- devops-engineer-agent: Deployment, infrastructure, monitoring\n\nFor each agent:\n1. Present the current context/task\n2. Ask for their expert opinion\n3. Request confidence level (0-100%)\n4. Collect concerns and recommendations\n\nSynthesize results:\n- Create consensus matrix (who agrees/disagrees)\n- Identify common themes\n- Highlight conflicts\n- Calculate weighted consensus score\n- Generate decision recommendation\n\nOutput format:\n```\n## Team Consultation Results\n\n### Consensus: [X%]\n\n### Votes:\n- Product Owner: [approve/modify/reject] (confidence: X%)\n- Tech Lead: [approve/modify/reject] (confidence: X%)\n- Developer: [approve/modify/reject] (confidence: X%)\n- QA Engineer: [approve/modify/reject] (confidence: X%)\n- DevOps: [approve/modify/reject] (confidence: X%)\n\n### Key Insights:\n[Summary of main points]\n\n### Concerns:\n[List of concerns]\n\n### Recommendation:\n[Final recommendation]\n```\n\nSave to: .kiro/memory/decisions/[date]-[topic].md"
+    "prompt": "User requested a team discussion. Invoke the team-coordinator sub-agent to orchestrate consultation with relevant team members. The coordinator will gather opinions, calculate consensus, and provide a recommendation. Document the decision in .kiro/memory/decisions/ if consensus is reached."
   }
 }

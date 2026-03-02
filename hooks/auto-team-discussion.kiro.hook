@@ -1,12 +1,12 @@
 {
   "name": "Auto Team Discussion",
   "version": "1.0.0",
-  "description": "Automatically consult team members before task execution for consensus-based decision making",
+  "description": "Automatically triggers team discussion when a spec task status changes to in_progress. Team Coordinator orchestrates parallel consultation with relevant agents to build consensus before implementation.",
   "when": {
     "type": "preTaskExecution"
   },
   "then": {
     "type": "askAgent",
-    "prompt": "Before executing this task, consult the dev team:\n\n1. Invoke Product Owner sub-agent: Assess business value, priority, and requirements clarity\n2. Invoke Tech Lead sub-agent: Review technical approach, architecture implications, and risks\n3. Invoke QA Engineer sub-agent: Identify testing requirements and quality concerns\n4. Invoke DevOps Engineer sub-agent (if deployment/infrastructure related): Check deployment considerations\n\nCollect feedback from all relevant agents in parallel. Synthesize their input and determine:\n- Consensus level (unanimous, majority, split)\n- Key concerns or blockers\n- Recommended approach\n- Risk assessment\n\nIf consensus ≥80%: Proceed with implementation\nIf consensus <80%: Escalate concerns to user for decision\n\nDocument the team discussion and decision in .kiro/memory/decisions/"
+    "prompt": "A spec task is about to start. Invoke the team-coordinator sub-agent to orchestrate a team discussion and build consensus on the approach. The team-coordinator will consult relevant team members (Product Owner, Tech Lead, QA, DevOps) in parallel and calculate consensus. If consensus ≥80%, proceed with implementation. If <80%, escalate to user. Document the decision in .kiro/memory/decisions/ with format: YYYY-MM-DD-[task-name].md"
   }
 }

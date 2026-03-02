@@ -1,12 +1,12 @@
 {
   "name": "dev-team-mode",
-  "displayName": "Dev Team Mode v3.0",
-  "version": "3.0.0",
-  "description": "AI-powered development team với automation nâng cao: auto code review, test generation, CI/CD integration, và intelligent workflow optimization",
-  "autonomyMode": "semi-auto",
+  "displayName": "Dev Team Mode v4.0 - Fully Autonomous",
+  "version": "4.0.0",
+  "description": "Fully autonomous AI-powered development team: 100% automation, zero user intervention, intelligent decision-making, continuous execution",
+  "autonomyMode": "full-auto",
   "autonomyConfig": {
-    "mode": "semi-auto",
-    "description": "Team executes tasks automatically với AI-powered analysis, user approves at strategic checkpoints",
+    "mode": "full-auto",
+    "description": "Team executes all tasks autonomously with AI-powered decisions, no user checkpoints, only escalates critical blockers",
     "autoApprove": {
       "codeReviewComments": true,
       "qaReports": true,
@@ -14,17 +14,23 @@
       "documentationUpdates": true,
       "testGeneration": true,
       "metricsReporting": true,
-      "codeChanges": false,
-      "deployments": false,
-      "architectureChanges": false
+      "codeChanges": true,
+      "deployments": true,
+      "architectureChanges": true,
+      "technicalDecisions": true,
+      "refactoring": true,
+      "performanceOptimizations": true,
+      "securityFixes": true
     },
     "checkpoints": {
-      "afterRequirementsAnalysis": true,
-      "afterTechnicalDesign": true,
-      "afterImplementation": true,
-      "afterQATesting": true,
-      "beforeDeployment": true,
-      "afterDeployment": false
+      "afterRequirementsAnalysis": false,
+      "afterTechnicalDesign": false,
+      "afterImplementation": false,
+      "afterQATesting": false,
+      "beforeDeployment": false,
+      "afterDeployment": false,
+      "onCriticalError": true,
+      "onArchitectureConflict": true
     },
     "aiFeatures": {
       "codeAnalysis": true,

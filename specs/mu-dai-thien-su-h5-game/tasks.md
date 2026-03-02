@@ -129,7 +129,7 @@ The implementation follows these principles:
     - _Requirements: 1.1, 1.2, 1.3_
     - **Status: COMPLETED** - Full Phaser 3 scene with class selection, name validation, confirmation dialog
 
-  - [ ] 3.5 Write property tests for character creation
+  - [x] 3.5 Write property tests for character creation
     - **Property 1: Character Creation with Valid Name**
     - **Property 2: Character Name Validation**
     - **Validates: Requirements 1.3, 1.4, 1.5**
@@ -186,7 +186,7 @@ The implementation follows these principles:
     - _Requirements: 2.1, 3.1_
     - **Status: COMPLETED** - Full input system with mouse/keyboard handling, enable/disable control
 
-  - [ ] 4.6 Write unit tests for client infrastructure
+  - [x] 4.6 Write unit tests for client infrastructure
     - Test asset loading and caching
     - Test WebSocket reconnection logic
     - Test input event handling
@@ -197,14 +197,14 @@ The implementation follows these principles:
 
 
 - [-] 6. Movement and navigation system
-  - [-] 6.1 Implement server-side world manager
+  - [x] 6.1 Implement server-side world manager
     - Create WorldManager class with map management
     - Implement SpatialHashGrid for spatial partitioning
     - Add entity tracking and spatial queries
     - Implement map loading from configuration
     - _Requirements: 12.1, 17.5_
 
-  - [ ] 6.2 Create movement validation service
+  - [x] 6.2 Create movement validation service
     - Implement MovementValidator for server-side validation
     - Add speed hack detection (max distance per time)
     - Validate walkable terrain using map data
@@ -212,7 +212,7 @@ The implementation follows these principles:
     - Log suspicious movement activity
     - _Requirements: 2.4, 18.1, 18.2, 18.3_
 
-  - [ ] 6.3 Implement client-side movement
+  - [x] 6.3 Implement client-side movement
     - Add click-to-move functionality
     - Implement pathfinding (A* algorithm)
     - Create smooth movement animation at 60 FPS
@@ -220,14 +220,14 @@ The implementation follows these principles:
     - Handle server corrections for position
     - _Requirements: 2.1, 2.2, 2.3_
 
-  - [ ] 6.4 Create position synchronization system
+  - [x] 6.4 Create position synchronization system
     - Implement server broadcast of position updates
     - Add position update batching (10 updates/second)
     - Create interpolation for smooth remote character movement
     - Handle nearby entity updates within 200ms
     - _Requirements: 2.5, 2.6, 7.3_
 
-  - [ ] 6.5 Write property tests for movement
+  - [-] 6.5 Write property tests for movement
     - **Property 3: Movement Validation**
     - **Property 4: Collision Detection**
     - **Property 60: Spatial Partitioning Query Correctness**
@@ -240,7 +240,7 @@ The implementation follows these principles:
     - Test pathfinding around obstacles
     - _Requirements: 2.3, 2.4_
 
-- [ ] 7. Map and zone management
+- [-] 7. Map and zone management
   - [ ] 7.1 Create map data models
     - Define GameMap interface with terrain data
     - Create Portal, SpawnPoint, and NPC interfaces
@@ -275,8 +275,8 @@ The implementation follows these principles:
     - _Requirements: 12.2, 12.4, 12.5_
 
 
-- [ ] 8. Monster AI and spawning system
-  - [ ] 8.1 Create monster data models
+- [-] 8. Monster AI and spawning system
+  - [x] 8.1 Create monster data models
     - Define Monster interface with stats and AI state
     - Create MonsterTemplate for configuration
     - Define AIState enum (IDLE, PATROL, CHASE, ATTACK)

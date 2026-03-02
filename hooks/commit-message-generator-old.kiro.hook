@@ -1,0 +1,12 @@
+{
+  "name": "Smart Commit Message Generator",
+  "version": "1.0.0",
+  "description": "Generate conventional commit messages based on file changes",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Analyze the current git changes and generate a conventional commit message:\n\nFormat: [type](scope): message\n\nTypes:\n- feat: New feature\n- fix: Bug fix\n- docs: Documentation\n- style: Formatting\n- refactor: Code restructuring\n- test: Adding tests\n- chore: Maintenance\n\nSteps:\n1. Run 'git diff --cached' to see staged changes\n2. Analyze what changed (files, functions, features)\n3. Determine the appropriate type and scope\n4. Write a clear, concise message (50 chars max)\n5. Add body with details if needed\n\nProvide the commit message ready to use."
+  }
+}

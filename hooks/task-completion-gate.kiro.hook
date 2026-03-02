@@ -1,0 +1,12 @@
+{
+  "name": "Task Completion Gate",
+  "version": "2.0.0",
+  "description": "Comprehensive quality check after task completion - tests, docs, architecture, security",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "✅ TASK COMPLETION GATE:\n\nVerify before marking complete:\n\n1. **Tests** (QA Engineer):\n   - Unit tests written? Coverage 80%+?\n   - Edge cases covered?\n   - Tests passing?\n\n2. **Documentation** (Product Owner):\n   - CHANGELOG.md updated?\n   - README.md accurate?\n   - API docs if needed?\n\n3. **Architecture** (Tech Lead):\n   - Follows architecture guidelines?\n   - Proper layer separation?\n   - No anti-patterns?\n\n4. **Security** (DevOps):\n   - No security vulnerabilities?\n   - Input validation present?\n   - Secrets properly managed?\n\nReport any blockers. If all pass: 'Task Gate: ✅ APPROVED'"
+  }
+}

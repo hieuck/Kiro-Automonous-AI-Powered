@@ -1,0 +1,12 @@
+{
+  "name": "Sprint Start Checklist",
+  "version": "1.0.0",
+  "description": "Trigger khi bắt đầu sprint mới, remind team về sprint planning và setup",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "🚀 SPRINT START CHECKLIST:\n\nVới vai trò Product Owner và Tech Lead, hãy đảm bảo:\n\n1. SPRINT PLANNING:\n   - [ ] Sprint goal đã được define rõ ràng\n   - [ ] User stories đã được prioritize\n   - [ ] Acceptance criteria đầy đủ cho mỗi story\n   - [ ] Dependencies đã được identify\n\n2. TECHNICAL PREPARATION:\n   - [ ] Stories đã được break down thành tasks\n   - [ ] Technical approach đã được discuss\n   - [ ] Estimates đã được team agree\n   - [ ] Test strategy đã được define\n\n3. TEAM SETUP:\n   - [ ] Tasks đã được assign\n   - [ ] Team capacity đã được confirm\n   - [ ] Blockers từ sprint trước đã được resolve\n   - [ ] Development environment ready\n\n4. DOCUMENTATION:\n   - [ ] Update team-context.md với sprint info\n   - [ ] Create sprint board/tracking\n   - [ ] Setup monitoring cho new features\n\nSau khi complete checklist, update .kiro/memory/team-context.md với sprint information."
+  }
+}

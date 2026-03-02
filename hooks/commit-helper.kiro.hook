@@ -1,0 +1,12 @@
+{
+  "name": "Commit Message Helper",
+  "version": "2.0.0",
+  "description": "Generate conventional commit messages from git changes",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "📝 COMMIT MESSAGE GENERATOR:\n\nAnalyze git changes and generate conventional commit message:\n\n**Format:** `[type](scope): message`\n\n**Types:**\n- feat: New feature\n- fix: Bug fix\n- docs: Documentation\n- style: Formatting\n- refactor: Code restructuring\n- test: Adding tests\n- chore: Maintenance\n- perf: Performance improvement\n- ci: CI/CD changes\n\n**Steps:**\n1. Run: `git diff --cached` (or `git diff` if nothing staged)\n2. Analyze changes: files, functions, features\n3. Determine type and scope\n4. Write clear message (50 chars max)\n5. Add body with details if needed\n\n**Output format:**\n```\n[type](scope): brief description\n\n- Detail 1\n- Detail 2\n```\n\nProvide ready-to-use commit message."
+  }
+}

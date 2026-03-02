@@ -1,0 +1,13 @@
+{
+  "name": "Changelog Updater",
+  "version": "2.0.0",
+  "description": "Tự động update CHANGELOG.md - phân biệt Dev Team Mode vs Project changes",
+  "when": {
+    "type": "postToolUse",
+    "toolTypes": ["write"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "📋 CHANGELOG: Assess if this change is changelog-worthy (feature/fix/breaking).\n\n**CRITICAL - Choose correct changelog:**\n- `.kiro/CHANGELOG.md` - ONLY for Dev Team Mode infrastructure (agents, hooks, skills, steering, memory)\n- `muh5/CHANGELOG.md` - ONLY for muh5 project code (server, client, tests, features)\n- Other projects: `<project>/CHANGELOG.md`\n\nIf changelog-worthy:\n1. Identify which project/system was changed\n2. Update the CORRECT changelog file\n3. Add under [Unreleased] section\n\nSkip for internal/trivial changes."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Code Quality Check on Save",
+  "version": "1.0.0",
+  "description": "Check code quality metrics when files are saved: complexity, duplication, naming conventions",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/**/*.ts", "src/**/*.js", "src/**/*.tsx", "src/**/*.jsx"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Perform code quality check on this file:\n\n1. COMPLEXITY:\n   - Check if functions are under 50 lines\n   - Verify nesting levels (max 3 levels)\n   - Identify overly complex logic\n\n2. NAMING CONVENTIONS:\n   - Variables: camelCase\n   - Functions: camelCase with verbs\n   - Classes: PascalCase\n   - Constants: UPPER_SNAKE_CASE\n   - Files: kebab-case\n\n3. CODE STRUCTURE:\n   - Single Responsibility Principle\n   - No code duplication\n   - Proper error handling\n\n4. DOCUMENTATION:\n   - Public functions have JSDoc\n   - Complex logic has comments\n\nReport issues with severity and suggestions. If all checks pass, respond with 'Code quality: PASS'"
+  }
+}

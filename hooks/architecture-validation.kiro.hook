@@ -1,0 +1,13 @@
+{
+  "name": "Architecture Validation",
+  "version": "1.0.0",
+  "description": "Validate that code changes follow architecture guidelines and design patterns",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["src/**/*.ts", "src/**/*.js"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Validate this file against architecture guidelines:\n\n1. LAYERED ARCHITECTURE:\n   - Is the file in the correct layer? (Presentation/Application/Domain/Infrastructure)\n   - Does it respect layer boundaries?\n   - No circular dependencies?\n\n2. SEPARATION OF CONCERNS:\n   - Single responsibility?\n   - Proper abstraction level?\n   - Minimal coupling?\n\n3. DESIGN PATTERNS:\n   - Are patterns used correctly?\n   - Any anti-patterns detected?\n\n4. DEPENDENCIES:\n   - Dependency injection used?\n   - Dependencies point inward (toward domain)?\n\nReference: .kiro/steering/architecture-guidelines.md\n\nReport violations with severity and recommendations. If compliant, respond with 'Architecture: COMPLIANT'"
+  }
+}

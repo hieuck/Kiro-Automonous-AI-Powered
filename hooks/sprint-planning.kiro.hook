@@ -1,0 +1,12 @@
+{
+  "name": "Sprint Planning",
+  "version": "2.0.0",
+  "description": "Sprint start checklist - planning, setup, and team alignment",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "🚀 SPRINT PLANNING (Product Owner + Tech Lead):\n\n**1. SPRINT PLANNING:**\n- [ ] Sprint goal defined clearly\n- [ ] User stories prioritized\n- [ ] Acceptance criteria complete\n- [ ] Dependencies identified\n\n**2. TECHNICAL PREPARATION:**\n- [ ] Stories broken down into tasks\n- [ ] Technical approach discussed\n- [ ] Estimates agreed by team\n- [ ] Test strategy defined\n\n**3. TEAM SETUP:**\n- [ ] Tasks assigned\n- [ ] Team capacity confirmed\n- [ ] Blockers from previous sprint resolved\n- [ ] Development environment ready\n\n**4. DOCUMENTATION:**\n- [ ] Update .kiro/memory/team-context.md with sprint info\n- [ ] Create sprint board/tracking\n- [ ] Setup monitoring for new features\n\nAfter completion, update team-context.md with:\n- Sprint number and dates\n- Sprint goal\n- Key deliverables\n- Team capacity"
+  }
+}

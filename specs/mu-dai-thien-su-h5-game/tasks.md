@@ -192,12 +192,12 @@ The implementation follows these principles:
     - Test input event handling
     - _Requirements: 17.4, 19.2_
 
-- [ ] 5. Checkpoint - Verify client infrastructure
+- [x] 5. Checkpoint - Verify client infrastructure
   - Ensure all tests pass, ask the user if questions arise.
 
 
-- [ ] 6. Movement and navigation system
-  - [ ] 6.1 Implement server-side world manager
+- [-] 6. Movement and navigation system
+  - [-] 6.1 Implement server-side world manager
     - Create WorldManager class with map management
     - Implement SpatialHashGrid for spatial partitioning
     - Add entity tracking and spatial queries

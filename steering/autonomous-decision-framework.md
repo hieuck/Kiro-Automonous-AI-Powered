@@ -2,7 +2,9 @@
 
 ## Overview
 
-This framework enables Dev Team Mode to make intelligent decisions autonomously, reducing human intervention to critical approvals only.
+This framework enables Dev Team Mode to make intelligent decisions autonomously through natural language coordination between agents, reducing human intervention to critical approvals only.
+
+**Implementation:** Uses Kiro's native `invokeSubAgent` tool for natural language communication between team members, orchestrated by hooks and the Team Coordinator agent.
 
 ## Decision Categories
 
@@ -50,40 +52,43 @@ This framework enables Dev Team Mode to make intelligent decisions autonomously,
 3. Await human decision
 4. Execute approved option
 
-## AI Decision Engine
+## Natural Language Decision Engine
 
-### Scoring Algorithm
+### Team Coordination Process
 
-```typescript
-interface DecisionScore {
-  complexity: number;      // 0-100
-  risk: number;           // 0-100
-  businessValue: number;  // 0-100
-  technicalDebt: number;  // 0-100
-  confidence: number;     // 0-100
-}
+**How It Works:**
+1. Hook triggers (preTaskExecution or userTriggered)
+2. Team Coordinator agent invoked
+3. Coordinator uses `invokeSubAgent` to consult relevant team members
+4. Each agent provides opinion in natural language with confidence level
+5. Coordinator synthesizes responses and calculates consensus
+6. Decision made based on weighted consensus (≥80% = proceed)
 
-function calculateAutonomyLevel(score: DecisionScore): number {
-  const riskWeight = 0.3;
-  const complexityWeight = 0.2;
-  const confidenceWeight = 0.3;
-  const businessValueWeight = 0.2;
-  
-  const autonomyScore = 
-    (100 - score.risk) * riskWeight +
-    (100 - score.complexity) * complexityWeight +
-    score.confidence * confidenceWeight +
-    score.businessValue * businessValueWeight;
-    
-  return autonomyScore;
-}
+### Consensus Calculation
 
-// 100% Autonomous Mode:
-// Auto-execute ALL tasks (no threshold)
-// Log decisions for audit trail
-// Monitor outcomes for learning
-// Auto-rollback if validation fails
+**Role-Based Weights:**
+- Business decisions: Product Owner (2x weight)
+- Technical decisions: Tech Lead (2x weight)
+- Architecture: Tech Lead (2.5x weight)
+- Quality: QA Engineer (2.5x weight)
+- Deployment: DevOps (2.5x weight)
+
+**Consensus Formula:**
 ```
+Consensus Score = (Weighted Approval Rate × 0.6) + (Avg Confidence × 0.4)
+
+If score ≥ 80%: Auto-proceed
+If score < 80%: Escalate to user
+```
+
+**Example:**
+- Tech Lead: Approve (confidence: 90%, weight: 2.0)
+- Developer: Approve (confidence: 85%, weight: 1.5)
+- QA: Modify (confidence: 70%, weight: 1.0)
+
+Weighted approval = (2.0 + 1.5) / (2.0 + 1.5 + 1.0) = 77.8%
+Avg confidence = (90 + 85 + 70) / 3 = 81.7%
+Consensus = (77.8 × 0.6) + (81.7 × 0.4) = 79.4% → Escalate
 
 ### Learning System
 
@@ -149,27 +154,20 @@ function calculateAutonomyLevel(score: DecisionScore): number {
    └─ Log learnings
 ```
 
-### Parallel Execution Strategy
+### Parallel Agent Consultation
 
-```
-1. Dependency Analysis
-   └─ Build task graph
+**Process:**
+1. Team Coordinator identifies relevant agents based on task context
+2. Invokes multiple agents simultaneously using `invokeSubAgent`
+3. Each agent analyzes independently and provides feedback
+4. Coordinator collects all responses
+5. Synthesizes into unified decision
 
-2. Parallelization
-   ├─ Identify independent tasks
-   ├─ Group by resource needs
-   └─ Create execution batches
-
-3. Resource Allocation
-   ├─ Assign to virtual team members
-   ├─ Balance workload
-   └─ Optimize throughput
-
-4. Coordination
-   ├─ Monitor progress
-   ├─ Handle conflicts
-   └─ Merge results
-```
+**Benefits:**
+- Faster decision-making (parallel vs sequential)
+- Diverse perspectives considered
+- No single point of failure
+- Natural language communication (human-readable audit trail)
 
 ## Metrics & Monitoring
 

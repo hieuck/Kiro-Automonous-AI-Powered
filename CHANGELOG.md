@@ -2,6 +2,37 @@
 
 All notable changes to Dev Team Mode will be documented in this file.
 
+## [Unreleased]
+
+### Added
+- **Muh5 Development Planning Decision (2026-03-02):**
+  - Created planning decision log (PLAN-001)
+  - Team consensus: 94% approval for Multiplayer + Combat focus
+  - Consulted 5 agents: Product Owner, Tech Lead, Developer, QA, DevOps
+  - Defined Phase 1 (4 weeks): WebSocket server, Combat system, Monster system
+  - Defined Phase 2 (2 weeks): Experience/Leveling, Loot system
+  - Timeline: 6 weeks to playable MVP
+  - Documented in `.kiro/memory/decisions/2026-03-02-muh5-next-development-phase.md`
+  - **This demonstrates Layer 3 automation:** User said "tiếp tục phát triển muh5" → Team automatically discussed → Decision made → No manual intervention needed!
+
+- **Team Discussion Workflow Documentation (2026-03-02):**
+  - Created comprehensive guide: `.kiro/docs/team-discussion-workflow.md`
+  - Documented 3-layer automation approach:
+    - Layer 1: Spec-based (100% automatic via preTaskExecution hook)
+    - Layer 2: Manual trigger (90% automatic via userTriggered hook)
+    - Layer 3: Smart detection (95% automatic via intelligent analysis)
+  - Clarified when each layer should be used
+  - Explained consensus calculation and role-based weights
+  - Added best practices and troubleshooting guide
+  
+- **First Real Decision Log (2026-03-02):**
+  - Created combat system architecture decision (ARCH-001)
+  - Demonstrated natural language team coordination
+  - Team Coordinator consulted 4 agents (Tech Lead, Developer, QA, DevOps)
+  - Calculated weighted consensus: 94% (auto-approved)
+  - Documented in `.kiro/memory/decisions/2026-03-02-combat-system-architecture.md`
+  - Validated automation approach: hooks triggered → review passed → decision logged
+
 ## [4.1.0] - 2026-03-02
 
 ### Added - 100% Fully Autonomous Mode
@@ -69,44 +100,52 @@ All notable changes to Dev Team Mode will be documented in this file.
 ## [Unreleased]
 
 ### Added
-- **Phase 2 Implementation: Context Router & Loop Prevention (2026-03-02):**
-  - Context-Aware Router with intelligent agent selection
-  - Complexity/risk/impact-based routing
-  - Domain and keyword-based routing
-  - Decision domain determination (5 types)
-  - Routing validation and confidence scoring
-  - Loop Prevention System with circular dependency detection
-  - Discussion Tracker with invocation chain management
-  - Timeout Manager (4 timeout types: 30s, 1min, 5min, 10s)
-  - Automatic cleanup of old discussions (1-hour retention)
-  - Max depth limit (10) and same-agent limit (3)
-  - Discussion statistics tracking
-- **Phase 1 Implementation: Message Bus & Agent Registry (2026-03-02):**
-  - Message Bus (TypeScript) with Pub/Sub pattern
-  - In-memory event-driven communication
-  - Agent Registry with capability mapping
-  - 5 agent roles with expertise domains
-  - Message validation and history tracking
-  - Subscription management with filtering
-  - Agent metrics tracking (invocations, success rate, response time)
-  - Singleton instances for global access
-  - Foundation for autonomous agent coordination
-- **Automated Team Discussion Infrastructure (2026-03-02):**
-  - Agent Communication Architecture with event-driven message bus
-  - Consensus & Decision Engine with voting-based algorithms
-  - Context-aware agent router for automatic team member selection
-  - Role-based weighted voting system (5 decision categories)
-  - Multi-round conflict resolution with compromise generation
-  - Circular dependency detection and loop prevention
-  - Automatic escalation rules (5 triggers)
-  - Decision recording with full audit trails
-  - Quality validation against steering rules
-  - Learning system for continuous improvement
-  - Parallel agent invocation with timeout mechanisms
-  - Response caching for performance optimization
-  - Monitoring metrics and alerting thresholds
-  - Foundation for 100% autonomous team coordination
-- **Muh5 Game Development - Task 3.4 (2026-03-02):**
+- **Phase 1 Cleanup Complete (2026-03-02):**
+  - Created .kiro/memory/decisions/ folder for team discussion logs
+  - Added decisions/README.md with documentation and templates
+  
+### Changed
+- **Updated Autonomous Decision Framework (2026-03-02):**
+  - Removed references to code-based infrastructure
+  - Updated to reflect natural language coordination approach
+  - Added consensus calculation examples
+  - Documented Team Coordinator process
+
+### Removed
+- **Duplicate Hooks Cleanup (2026-03-02):**
+  - Deleted session-logger.kiro.hook (duplicate of session-end)
+  - Deleted architecture-validation.kiro.hook (duplicate of architecture-review)
+  - Deleted post-implementation-qa.kiro.hook (duplicate of task-completion-gate)
+  - Deleted commit-message-generator-old.kiro.hook (duplicate of commit-helper)
+  - Hooks reduced: 23 → 19 (17% reduction)
+
+### Added
+- **Natural Language Team Coordination (2026-03-02):**
+  - Team Coordinator custom agent for orchestrating multi-agent discussions
+  - Uses invokeSubAgent tool for natural language communication
+  - Consensus building through conversation, not code
+  - Auto Team Discussion hook (preTaskExecution) for automatic consultation
+  - Parallel Team Consultation hook (userTriggered) for complex decisions
+  - Role-based weighted consensus (Product Owner 2x for business, Tech Lead 2.5x for architecture, etc.)
+  - Automatic escalation when consensus <80%
+  - Decision documentation in .kiro/memory/decisions/
+  - Conflict resolution with multi-round discussions (max 3 rounds)
+  - Deadlock detection and escalation
+
+### Removed
+- **Code-Based Infrastructure (2026-03-02):**
+  - Removed message-bus.ts, agent-registry.ts, context-router.ts, loop-prevention.ts
+  - Removed team-coordinator.ts, consensus-engine.ts
+  - Removed TypeScript infrastructure tests
+  - Reason: Over-engineering - Kiro already provides invokeSubAgent for natural language agent communication
+  - Replaced with hooks-based automation using native Kiro capabilities
+
+### Changed
+- **Automation Approach:** Code-based → Natural language-based
+- **Agent Communication:** Message bus → invokeSubAgent tool
+- **Consensus Calculation:** TypeScript algorithm → Natural language synthesis
+
+## [4.1.0] - 2026-03-02
   - Character creation UI scene (Phaser 3)
   - Class selection interface (DARK_KNIGHT, DARK_WIZARD, ELF)
   - Character name input with client-side validation

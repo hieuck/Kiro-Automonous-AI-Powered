@@ -1,0 +1,102 @@
+{
+  "id": "dec-2026-03-03-001",
+  "timestamp": "2026-03-03T10:00:00Z",
+  "decision_type": "architecture",
+  "task": {
+    "id": "10.1-10.2",
+    "name": "Combat System Core Implementation",
+    "complexity": 6,
+    "risk": "medium",
+    "description": "Implement core combat system with damage calculation, basic attack processing, and equipment bonuses"
+  },
+  "context": {
+    "phase": "Phase 4 - First Real Tasks",
+    "project": "muh5 - Mu Đại Thiên Sứ H5 Game",
+    "requirements": ["3.2", "18.1"],
+    "existing_patterns": [
+      "AuthService pattern",
+      "CharacterService pattern",
+      "Layered architecture",
+      "TypeScript with interfaces"
+    ]
+  },
+  "participants": [
+    {
+      "agent": "tech-lead-agent",
+      "role": "Tech Lead",
+      "weight": 2.5,
+      "decision": "Approve",
+      "confidence": 90,
+      "rationale": "Architecture aligns with existing service pattern. Damage formula is simple and extensible. Equipment bonuses additive to base attack stat. Integration with CharacterService is clean.",
+      "key_recommendations": [
+        "Follow existing service pattern (CombatService)",
+        "Damage formula: baseDamage = (attack - defense/2) * skillMultiplier",
+        "Equipment bonuses: Additive to base attack stat",
+        "Use CharacterService for stat retrieval"
+      ]
+    },
+    {
+      "agent": "qa-engineer-agent",
+      "role": "QA Engineer",
+      "weight": 2.5,
+      "decision": "Approve",
+      "confidence": 85,
+      "rationale": "Validation requirements met for Req 3.2 and 18.1. Server-authoritative design prevents client manipulation. Minimum damage (1) prevents zero damage exploits.",
+      "key_recommendations": [
+        "Edge cases: zero/negative damage, missing equipment, invalid targets",
+        "Property-based tests for damage calculation",
+        "Server-authoritative validation enforced"
+      ]
+    },
+    {
+      "agent": "developer-agent",
+      "role": "Developer",
+      "weight": 1.5,
+      "decision": "Approve",
+      "confidence": 88,
+      "rationale": "Implementation feasible within existing codebase structure. TypeScript interfaces straightforward. Equipment bonus retrieval from character data is clean. No blocking dependencies.",
+      "key_recommendations": [
+        "Estimated effort: 4-6 hours including tests",
+        "No blocking dependencies identified",
+        "Clean integration with existing systems"
+      ]
+    }
+  ],
+  "consensus_calculation": {
+    "weighted_approval": 1.0,
+    "average_confidence": 0.877,
+    "formula": "(weighted_approval * 0.6) + (avg_confidence * 0.4)",
+    "final_consensus": 0.951
+  },
+  "decision": {
+    "outcome": "Proceed",
+    "consensus_score": 95.1,
+    "threshold": 80.0,
+    "rationale": "Strong team consensus (95.1%) exceeds threshold. All agents approve with high confidence. Architecture aligns with existing patterns, requirements validated, implementation feasible."
+  },
+  "implementation_approach": {
+    "architecture": "CombatService following existing service pattern",
+    "damage_formula": "Math.max(1, attack - defense/2) * skillMultiplier",
+    "equipment_bonuses": "Additive to base attack stat",
+    "validation": "Server-authoritative with edge case handling",
+    "testing": "Unit tests + property-based tests + integration tests",
+    "files_to_create": [
+      "muh5/packages/server/src/types/combat.types.ts",
+      "muh5/packages/server/src/services/combat.service.ts",
+      "muh5/packages/server/src/services/__tests__/combat.service.test.ts"
+    ]
+  },
+  "next_steps": [
+    "Developer implements CombatService following approved approach",
+    "Quality gate check after implementation",
+    "Update services/index.ts to export CombatService"
+  ],
+  "metadata": {
+    "facilitator": "team-coordinator",
+    "decision_method": "weighted_consensus",
+    "escalation_required": false,
+    "logged_by": "decision-logging-hook",
+    "phase": "Phase 4",
+    "first_real_task": true
+  }
+}

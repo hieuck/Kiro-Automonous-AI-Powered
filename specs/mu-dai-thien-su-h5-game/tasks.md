@@ -316,7 +316,7 @@ The implementation follows these principles:
     - **Status: COMPLETED** - DeathService with character/monster death, respawn system, 22 tests passing
     - _Requirements: 3.4, 3.5, 3.7_
 
-  - [~] 10.5 Create combat UI and effects (client)
+  - [x] 10.5 Create combat UI and effects (client)
     - Display damage numbers with animations
     - Show health bars for characters and monsters
     - Add combat animation effects

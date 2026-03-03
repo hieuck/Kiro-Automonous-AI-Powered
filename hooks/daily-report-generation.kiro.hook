@@ -1,0 +1,12 @@
+{
+  "name": "Daily Report Generation",
+  "version": "1.0.0",
+  "description": "Generate daily decision summary report",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "You are the Team Coordinator. Generate a daily decision report for today:\n\n1. Load all decisions from today from .kiro/memory/decisions/\n2. Calculate summary metrics:\n   - Decisions made, success rate, avg quality score, escalation rate\n3. List each decision with:\n   - Type, risk, complexity, consensus, outcome\n   - Agent responses summary\n   - Lessons learned\n4. Identify quick wins and issues\n5. Provide recommendations for tomorrow\n6. Save report to .kiro/memory/reports/daily-YYYY-MM-DD.md\n\nUse the format from the existing daily report as a template. Keep it concise but informative."
+  }
+}

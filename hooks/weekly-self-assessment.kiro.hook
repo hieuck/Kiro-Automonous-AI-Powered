@@ -1,0 +1,13 @@
+{
+  "name": "Weekly Self-Assessment",
+  "version": "1.0.0",
+  "description": "Automated weekly team health check and performance review. Runs every Monday at 9:00 AM to assess team metrics, identify issues, and propose improvements.",
+  "when": {
+    "type": "userTriggered",
+    "schedule": "0 9 * * 1"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Conduct weekly self-assessment for the Dev Team.\n\n## Your Task\n\n1. **Collect Last Week's Data:**\n   - Review all decisions made (check .kiro/memory/decisions/)\n   - Calculate key metrics:\n     * Autonomy rate (% decisions without escalation)\n     * Decision accuracy (% successful outcomes)\n     * Consensus success rate\n     * Average cycle time\n     * Quality scores\n\n2. **Agent Self-Reports:**\n   - Consult each agent (Tech Lead, QA Lead, DevOps Lead, Developer, Product Owner)\n   - Ask each:\n     * Workload status (overloaded/balanced/underutilized)\n     * Blockers encountered\n     * Improvements suggested\n     * Key learnings from last week\n\n3. **Identify Issues:**\n   - Bottlenecks in process\n   - Quality concerns\n   - Performance problems\n   - Communication gaps\n\n4. **Propose Improvements:**\n   - Specific, actionable recommendations\n   - Priority ranking (High/Medium/Low)\n   - Expected impact\n\n5. **Generate Report:**\n   - Save to .kiro/reports/weekly-assessment-[date].md\n   - Include:\n     * Metrics summary with trends\n     * Achievements from last week\n     * Issues identified\n     * Improvements proposed\n     * Next week focus areas\n\n6. **Notify Human:**\n   - Summarize key findings\n   - Highlight critical issues requiring attention\n   - Recommend actions for Head of Engineering\n\n## Output Format\n\nCreate a comprehensive weekly assessment report following the template in self-evolution-framework.md.\n\nBe objective, data-driven, and actionable."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Pre-Commit Tests",
+  "version": "1.0.0",
+  "description": "Run affected tests before committing to prevent broken code",
+  "when": {
+    "type": "fileEdited",
+    "patterns": ["**/*.ts", "**/*.tsx", "**/*.js", "**/*.jsx", "!**/*.test.*", "!**/*.spec.*"]
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "📋 PRE-COMMIT TEST CHECK:\n\nA source file was modified. Before committing:\n\n1. Identify affected test files\n2. Run those tests: `npm test -- --changed --bail`\n3. If tests fail:\n   - Report which tests failed\n   - Show error messages\n   - Suggest fixes\n   - BLOCK commit until fixed\n4. If tests pass:\n   - Report: 'Tests: ✅ PASS - Safe to commit'\n\nThis prevents broken code from being committed.\n\nNote: You can skip this check for urgent fixes by using git commit with --no-verify flag."
+  }
+}

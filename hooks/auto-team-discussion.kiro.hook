@@ -1,12 +1,12 @@
 {
   "name": "Auto Team Discussion",
-  "version": "1.0.0",
+  "version": "2.0.0",
   "description": "Automatically triggers team discussion when a spec task status changes to in_progress. Team Coordinator orchestrates parallel consultation with relevant agents to build consensus before implementation.",
   "when": {
     "type": "preTaskExecution"
   },
   "then": {
     "type": "askAgent",
-    "prompt": "A spec task is about to start. Invoke the team-coordinator sub-agent to orchestrate a team discussion and build consensus on the approach. The team-coordinator will consult relevant team members (Product Owner, Tech Lead, QA, DevOps) in parallel and calculate consensus. If consensus ≥80%, proceed with implementation. If <80%, escalate to user. Document the decision in .kiro/memory/decisions/ with format: YYYY-MM-DD-[task-name].md"
+    "prompt": "A spec task is about to start. Invoke the team-coordinator sub-agent to orchestrate a team discussion and build consensus on the approach.\n\nThe team-coordinator MUST use invokeSubAgent tool to consult these team members IN PARALLEL:\n- tech-lead-agent: Architecture and technical approach\n- developer-agent: Implementation feasibility and effort\n- qa-engineer-agent: Testing strategy and quality concerns\n\nTeam Coordinator will:\n1. Invoke all 3 agents simultaneously with the task context\n2. Collect their opinions with confidence levels\n3. Calculate weighted consensus (Tech Lead 2.5x weight for architecture)\n4. If consensus ≥80%: Auto-proceed with recommendation\n5. If consensus <80%: Escalate to user with full context\n6. Document decision in .kiro/memory/decisions/ with format: YYYY-MM-DD-[task-name].md\n\nIMPORTANT: Team Coordinator must actually INVOKE the agents, not just simulate their responses."
   }
 }

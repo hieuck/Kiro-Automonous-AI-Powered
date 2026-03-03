@@ -1,131 +1,147 @@
 ---
-name: devops-engineer
-description: CI/CD, infrastructure management, deployment, and monitoring. Use when setting up pipelines, managing infrastructure, or configuring deployments.
+name: infrastructure-automation
+description: Infrastructure automation and DevOps practices for autonomous AI team. Covers IaC, CI/CD pipelines, deployment strategies, monitoring, security, and incident response. Use when managing infrastructure, deployments, or ensuring system reliability.
 metadata:
-  author: mu-dai-thien-su-team
-  version: "1.0"
-  category: operations
+  author: dev-team-mode
+  version: "3.0"
+  category: infrastructure
+  lastUpdated: "2026-03-03"
 ---
 
-# DevOps Engineer Workflow
+# DevOps Engineer - Infrastructure & Automation
 
 ## When to Use This Skill
 
-- Setting up CI/CD pipelines
-- Managing infrastructure
-- Configuring deployments
-- Setting up monitoring and logging
-- Security and compliance
-- Performance optimization
-- Disaster recovery planning
+- Infrastructure provisioning and management
+- CI/CD pipeline configuration and optimization
+- Deployment automation and strategies
+- Monitoring and alerting setup
+- Security hardening and compliance
+- Incident response and troubleshooting
+- Performance optimization and scaling
+- Cost optimization
 
 ## Core Responsibilities
 
-### 1. CI/CD Pipeline Management
-Automate build, test, and deployment processes for fast, reliable releases.
+### 1. Infrastructure as Code (IaC)
+Manage infrastructure using Terraform, CloudFormation, or CDK with version control and automated provisioning.
 
-### 2. Infrastructure as Code
-Manage infrastructure through version-controlled code for consistency and repeatability.
+### 2. CI/CD Pipelines
+Design and maintain automated build, test, and deployment pipelines ensuring fast, reliable releases.
 
 ### 3. Monitoring & Observability
-Ensure system health through comprehensive monitoring, logging, and alerting.
+Implement comprehensive monitoring, logging, and alerting to ensure system health and quick incident response.
 
 ### 4. Security & Compliance
-Implement security best practices and maintain compliance standards.
+Enforce security best practices, manage secrets, implement access controls, and ensure compliance.
 
-## CI/CD Pipeline Checklist
+## Infrastructure Checklist
 
-- [ ] Source control integration (Git)
-- [ ] Automated builds on commit
-- [ ] Unit tests run automatically
-- [ ] Integration tests run automatically
-- [ ] Code quality checks (linting, formatting)
-- [ ] Security scanning (dependencies, secrets)
-- [ ] Build artifacts stored
-- [ ] Automated deployment to staging
-- [ ] Manual approval for production
-- [ ] Rollback capability
-- [ ] Deployment notifications
+**Before Deployment:**
+- [ ] Infrastructure code reviewed and tested
+- [ ] Security scan passed (no vulnerabilities)
+- [ ] Cost estimation reviewed
+- [ ] Backup and rollback plan ready
+- [ ] Monitoring and alerts configured
+
+**During Deployment:**
+- [ ] Blue-green or canary deployment strategy
+- [ ] Health checks passing
+- [ ] Logs monitored in real-time
+- [ ] Performance metrics tracked
+
+**After Deployment:**
+- [ ] Smoke tests passed
+- [ ] Monitoring dashboards updated
+- [ ] Documentation updated
+- [ ] Post-deployment review scheduled
+
+## CI/CD Pipeline Stages
+
+1. **Build** - Compile code, run linters
+2. **Test** - Unit, integration, E2E tests
+3. **Security Scan** - Vulnerability scanning
+4. **Package** - Create deployment artifacts
+5. **Deploy** - Deploy to environment
+6. **Verify** - Health checks and smoke tests
+7. **Monitor** - Track metrics and logs
 
 ## Deployment Strategies
 
-### Blue-Green Deployment
-```
-1. Deploy new version (Green) alongside current (Blue)
-2. Test Green environment thoroughly
-3. Switch traffic from Blue to Green
-4. Keep Blue running as rollback option
-5. Decommission Blue after stability confirmed
-```
+**Blue-Green Deployment:**
+- Zero downtime
+- Instant rollback capability
+- Full environment duplication
 
-### Canary Deployment
-```
-1. Deploy new version to small subset (5%)
-2. Monitor metrics closely
-3. Gradually increase traffic (10%, 25%, 50%, 100%)
-4. Rollback immediately if issues detected
-5. Complete rollout when stable
-```
+**Canary Deployment:**
+- Gradual rollout (5% → 25% → 50% → 100%)
+- Monitor metrics at each stage
+- Automatic rollback on errors
 
-### Rolling Deployment
-```
-1. Update instances one at a time
-2. Health check after each update
-3. Continue if healthy, rollback if unhealthy
-4. Maintain service availability throughout
-```
-
-## Security Checklist
-
-### Application Security
-- [ ] Secrets in environment variables (not code)
-- [ ] No hardcoded credentials
-- [ ] HTTPS enforced everywhere
-- [ ] Security headers configured
-- [ ] Input validation on all endpoints
-- [ ] SQL injection prevention
-- [ ] XSS protection
-- [ ] CSRF protection
-- [ ] Rate limiting implemented
-
-### Infrastructure Security
-- [ ] Firewall rules configured
-- [ ] SSH key-based authentication only
-- [ ] Regular security updates applied
-- [ ] Network segmentation
-- [ ] Encryption at rest
-- [ ] Encryption in transit (TLS 1.2+)
-- [ ] Backup strategy implemented
-- [ ] Access logs enabled
-
-### CI/CD Security
-- [ ] Dependency vulnerability scanning
-- [ ] Container image scanning
-- [ ] Secret scanning in code
-- [ ] Code signing for releases
-- [ ] Access control for pipelines
+**Rolling Deployment:**
+- Update instances incrementally
+- Maintain service availability
+- Lower resource requirements
 
 ## Monitoring & Alerting
 
-### Metrics to Monitor
-- Response time (p50, p95, p99)
-- Error rate
-- Request throughput
-- CPU/Memory usage
-- Disk I/O
-- Network traffic
+**Key Metrics:**
+- **Application:** Response time, error rate, throughput
+- **Infrastructure:** CPU, memory, disk, network
+- **Business:** User activity, conversions, revenue
 
-### Alert Configuration
-- High error rate (> 5% for 5min)
-- Slow response time (p95 > 1s for 10min)
-- High CPU usage (> 80% for 10min)
-- High memory usage (> 90% for 5min)
-- Low disk space (< 10%)
+**Alert Levels:**
+- **P0 (Critical):** Production down, data loss
+- **P1 (High):** Degraded performance, partial outage
+- **P2 (Medium):** Non-critical issues
+- **P3 (Low):** Informational
+
+## Security Best Practices
+
+- Use IAM roles, never hardcode credentials
+- Implement least privilege access
+- Enable encryption at rest and in transit
+- Regular security scanning and patching
+- Secrets management (AWS Secrets Manager, Vault)
+- Network segmentation and firewalls
+- Audit logging enabled (CloudTrail)
+
+## Incident Response
+
+1. **Detect** - Alerts trigger, issue identified
+2. **Assess** - Determine severity and impact
+3. **Respond** - Implement fix or rollback
+4. **Communicate** - Update stakeholders
+5. **Resolve** - Verify fix and restore service
+6. **Post-Mortem** - Document lessons learned
+
+## Cost Optimization
+
+- Right-size resources based on actual usage
+- Use reserved instances for predictable workloads
+- Implement auto-scaling
+- Clean up unused resources
+- Use spot instances for fault-tolerant workloads
+- Optimize storage with lifecycle policies
+- Monitor and set budget alerts
+
+## Best Practices
+
+- Automate everything possible
+- Infrastructure as code for all resources
+- Immutable infrastructure (no manual changes)
+- Comprehensive monitoring and logging
+- Regular backups and disaster recovery testing
+- Security-first mindset
+- Document runbooks and procedures
+- Continuous improvement
 
 ## References
 
 See `references/` folder for:
+- Terraform/CloudFormation templates
 - CI/CD pipeline examples
-- Infrastructure templates
-- Monitoring dashboards
-- Security checklists
+- Monitoring dashboard configurations
+- Incident response playbooks
+- Security hardening guides
+- Cost optimization strategies

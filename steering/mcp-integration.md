@@ -1,3 +1,9 @@
+---
+title: MCP Integration Guide
+inclusion: always
+description: Guide for using Model Context Protocol servers to extend team capabilities
+---
+
 # MCP Integration Guide
 
 ## Overview

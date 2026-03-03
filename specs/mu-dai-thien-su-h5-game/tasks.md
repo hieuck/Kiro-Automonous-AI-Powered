@@ -227,27 +227,27 @@ The implementation follows these principles:
     - Handle nearby entity updates within 200ms
     - _Requirements: 2.5, 2.6, 7.3_
 
-  - [-] 6.5 Write property tests for movement
+  - [x] 6.5 Write property tests for movement
     - **Property 3: Movement Validation**
     - **Property 4: Collision Detection**
     - **Property 60: Spatial Partitioning Query Correctness**
     - **Property 62: Movement Speed Detection**
     - **Validates: Requirements 2.3, 2.4, 17.5, 18.2**
 
-  - [ ] 6.6 Write unit tests for movement edge cases
+  - [x] 6.6 Write unit tests for movement edge cases
     - Test movement to out-of-bounds positions
     - Test collision with various obstacle types
     - Test pathfinding around obstacles
     - _Requirements: 2.3, 2.4_
 
 - [-] 7. Map and zone management
-  - [ ] 7.1 Create map data models
+  - [x] 7.1 Create map data models
     - Define GameMap interface with terrain data
     - Create Portal, SpawnPoint, and NPC interfaces
     - Implement map configuration loading
     - _Requirements: 12.1, 12.2_
 
-  - [ ] 7.2 Implement map transition system
+  - [x] 7.2 Implement map transition system
     - Create portal detection and interaction
     - Implement map transition confirmation UI
     - Add loading screen during map transitions
@@ -255,72 +255,35 @@ The implementation follows these principles:
     - Validate level requirements for maps
     - _Requirements: 12.2, 12.3, 12.4, 12.5_
 
-  - [ ] 7.3 Create map rendering system (client)
+  - [x] 7.3 Create map rendering system (client)
     - Implement terrain rendering with tilemap
     - Add obstacle and decoration rendering
     - Create minimap display
     - Implement fog of war (optional)
     - _Requirements: 12.7_
 
-  - [ ] 7.4 Write property tests for map system
+  - [x] 7.4 Write property tests for map system
     - **Property 40: Map Transition**
     - **Property 41: Map Level Requirements**
     - **Property 42: Map Monster Spawning**
     - **Validates: Requirements 12.3, 12.5, 12.6**
 
-  - [ ] 7.5 Write unit tests for map transitions
+  - [x] 7.5 Write unit tests for map transitions
     - Test portal interaction and confirmation
     - Test level requirement enforcement
     - Test asset loading during transitions
     - _Requirements: 12.2, 12.4, 12.5_
 
 
-- [-] 8. Monster AI and spawning system
+- [x] 8. Monster AI and spawning system
   - [x] 8.1 Create monster data models
-    - Define Monster interface with stats and AI state
-    - Create MonsterTemplate for configuration
-    - Define AIState enum (IDLE, PATROL, CHASE, ATTACK)
-    - Create LootEntry interface for drop tables
-    - _Requirements: 13.1, 13.6_
+  - [x] 8.2 Implement monster spawning system
+  - [x] 8.3 Create monster AI system
+  - [x] 8.4 Implement monster update loop
+  - [x] 8.5 Write property tests for monster system
+  - [x] 8.6 Write unit tests for monster AI
 
-  - [ ] 8.2 Implement monster spawning system
-    - Create MonsterSpawner class
-    - Implement spawn point management
-    - Add monster respawn logic with configurable delays
-    - Scale monster stats based on map difficulty
-    - _Requirements: 13.1, 13.5, 13.6_
-
-  - [ ] 8.3 Create monster AI system
-    - Implement idle and patrol behavior
-    - Add aggro detection and chase logic
-    - Create attack behavior with timing
-    - Implement AI state machine
-    - Add boss-specific AI patterns
-    - _Requirements: 13.2, 13.3, 13.4, 13.7_
-
-  - [ ] 8.4 Implement monster update loop
-    - Create game loop for monster AI updates (100ms tick)
-    - Process monster movement and attacks
-    - Handle monster state transitions
-    - Broadcast monster updates to nearby players
-    - _Requirements: 13.4_
-
-  - [ ] 8.5 Write property tests for monster system
-    - **Property 43: Monster Spawn Location**
-    - **Property 44: Monster Patrol Behavior**
-    - **Property 45: Monster Aggro Behavior**
-    - **Property 46: Monster Respawn**
-    - **Property 47: Monster Stat Scaling**
-    - **Validates: Requirements 13.1, 13.2, 13.3, 13.5, 13.6**
-
-  - [ ] 8.6 Write unit tests for monster AI
-    - Test AI state transitions
-    - Test aggro range detection
-    - Test patrol area boundaries
-    - Test boss AI patterns
-    - _Requirements: 13.2, 13.3, 13.7_
-
-- [ ] 9. Checkpoint - Verify world and monster systems
+- [x] 9. Checkpoint - Verify world and monster systems
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 10. Combat system implementation

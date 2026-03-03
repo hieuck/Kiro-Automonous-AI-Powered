@@ -1,48 +1,27 @@
-# Team Decision Logs
+# Decision Tracking System
 
-This folder contains decision logs from automated team discussions.
+This directory stores all team decisions for learning and continuous improvement.
 
-## Purpose
+## Structure
 
-When the Team Coordinator orchestrates discussions between agents (Product Owner, Tech Lead, Developer, QA, DevOps), the consensus results and decision rationale are documented here.
+- `index.json` - Index of all decisions with metadata
+- `dec-YYYY-MM-DD-NNN.json` - Individual decision records
 
-## File Naming Convention
+## Decision Record Format
 
-```
-YYYY-MM-DD-topic-name.md
-```
-
-Examples:
-- `2026-03-02-authentication-implementation.md`
-- `2026-03-02-database-migration-strategy.md`
-- `2026-03-02-api-versioning-approach.md`
-
-## Decision Log Template
-
-Each decision log should include:
-
-1. **Context**: What decision needed to be made
-2. **Participants**: Which agents were consulted
-3. **Votes**: Each agent's decision (approve/modify/reject) and confidence
-4. **Consensus Score**: Weighted consensus percentage
-5. **Key Insights**: Main points from discussion
-6. **Concerns**: Any dissenting opinions or risks identified
-7. **Final Decision**: What was decided and why
-8. **Next Steps**: Action items
-
-## Retention Policy
-
-- Keep all decision logs for audit trail
-- Archive logs older than 1 year to `decisions/archive/`
-- Never delete decision logs (important for learning and accountability)
+Each decision is stored as a JSON file with:
+- Context and description
+- Agent responses with confidence levels
+- Consensus calculation
+- Final decision and rationale
+- Outcome tracking (added after execution)
 
 ## Usage
 
-Decision logs are automatically created by:
-- `auto-team-discussion.kiro.hook` (preTaskExecution)
-- `parallel-team-consultation.kiro.hook` (userTriggered)
-- `team-coordinator` agent
+The Team Coordinator automatically:
+1. Creates decision records during team consultations
+2. Tracks outcomes after task completion
+3. Updates agent weights weekly based on accuracy
+4. Generates reports for learning
 
----
-
-**Last Updated:** 2026-03-02
+See `.kiro/skills/team-coordinator/references/decision-tracking-guide.md` for details.

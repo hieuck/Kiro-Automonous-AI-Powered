@@ -1,0 +1,13 @@
+{
+  "name": "Monthly Organizational Review",
+  "version": "1.0.0",
+  "description": "Comprehensive monthly review of team structure, processes, and performance. Identifies systemic issues and proposes structural improvements.",
+  "when": {
+    "type": "userTriggered",
+    "schedule": "0 9 * * 5"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Conduct comprehensive monthly organizational review for the Dev Team.\n\n## Your Task\n\n1. **Analyze Month's Performance:**\n   - Review all decisions from past month\n   - Calculate monthly metrics:\n     * Autonomy rate trend\n     * Decision accuracy by type\n     * Consensus success patterns\n     * Escalation analysis\n     * Quality trends\n     * Cycle time evolution\n\n2. **Pattern Recognition:**\n   - Identify successful patterns (>90% success rate)\n   - Identify anti-patterns (<70% success rate)\n   - Analyze what worked and what didn't\n   - Extract lessons learned\n\n3. **Agent Performance Review:**\n   - Individual agent metrics\n   - Decision accuracy by agent\n   - Confidence calibration\n   - Response time analysis\n   - Contribution quality\n   - Collaboration effectiveness\n\n4. **Process Efficiency:**\n   - Bottleneck identification\n   - Workflow analysis\n   - Communication effectiveness\n   - Decision-making speed\n   - Quality gate effectiveness\n\n5. **Structural Assessment:**\n   - Role clarity and effectiveness\n   - Authority distribution\n   - Workload balance\n   - Skill gaps\n   - Resource constraints\n\n6. **Strategic Recommendations:**\n   - Process improvements\n   - Structural changes\n   - Weight adjustments\n   - Threshold tuning\n   - Training needs\n   - Tool/automation opportunities\n\n7. **Generate Report:**\n   - Save to .kiro/reports/monthly-review-[YYYY-MM].md\n   - Include:\n     * Executive summary\n     * Metrics analysis with trends\n     * Pattern recognition results\n     * Agent performance review\n     * Process efficiency analysis\n     * Structural assessment\n     * Strategic recommendations\n     * Action items with priorities\n\n8. **Update Knowledge Base:**\n   - Save successful patterns to .kiro/memory/learning/patterns/\n   - Document anti-patterns\n   - Update best practices\n   - Record lessons learned\n\n9. **Propose Adjustments:**\n   - Adaptive weight updates\n   - Consensus threshold changes\n   - Process refinements\n   - Role adjustments\n\n## Output\n\nCreate comprehensive monthly review report with:\n- Data-driven insights\n- Actionable recommendations\n- Clear priorities\n- Measurable goals for next month\n\nBe thorough, objective, and strategic."
+  }
+}

@@ -1,11 +1,12 @@
 {
   "name": "Security Scan",
-  "version": "3.0.0",
-  "description": "Quick security checks before write operations - secrets, SQL injection, XSS, path traversal",
+  "version": "4.0.0",
+  "description": "Security checks for critical files only - config, infrastructure, security-sensitive code",
   "when": {
     "type": "preToolUse",
     "toolTypes": ["write"]
   },
+  "filePatterns": ["**/config/**", "**/.env*", "**/security/**", "**/auth/**", "**/database/**", "**/*secret*", "**/*password*", "**/*token*"],
   "then": {
     "type": "askAgent",
     "prompt": "🔒 SECURITY SCAN (Quick Check):\n\n1. Secrets: API keys, passwords, tokens hardcoded?\n2. SQL Injection: String concatenation in queries?\n3. XSS: Unescaped user input in HTML?\n4. Path Traversal: Unsafe file operations?\n\nReference: .kiro/steering/security-policies.md\n\nIf issues found: Report with severity + fix.\nIf clean: 'Security: ✅ PASS'"

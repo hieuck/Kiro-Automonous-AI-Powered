@@ -1,0 +1,35 @@
+# Metrics Database
+
+This directory stores monthly performance metrics for the team and individual agents.
+
+## Structure
+
+```
+metrics/
+├── 2026-03.json
+├── 2026-04.json
+└── ...
+```
+
+## Tracked Metrics
+
+### Team Metrics
+- Autonomy rate
+- Decision accuracy
+- Consensus success rate
+- Escalation rate
+- Average cycle time
+- Quality score
+
+### Agent Metrics
+- Decisions participated
+- Decision accuracy
+- Average confidence
+- Confidence calibration
+- Response time
+- Contribution quality
+
+### Patterns
+- Successful patterns
+- Anti-patterns
+- Trends and insights

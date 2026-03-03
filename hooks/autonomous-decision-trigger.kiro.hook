@@ -1,0 +1,12 @@
+{
+  "name": "Autonomous Decision Trigger",
+  "version": "1.0.0",
+  "description": "Triggers autonomous decision-making process when a task requires team consensus. Invokes Team Coordinator to facilitate multi-agent consultation.",
+  "when": {
+    "type": "preTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "A new task is about to start. Determine if autonomous team decision-making is needed.\n\n## Your Task\n\n1. **Analyze Task Complexity:**\n   - Read task description and requirements\n   - Assess complexity score (1-10)\n   - Identify decision domains (architecture/technical/quality/infrastructure/business)\n   - Determine risk level (low/medium/high/critical)\n\n2. **Decision Criteria:**\n   \n   **Trigger Autonomous Decision If:**\n   - Complexity score ≥ 5\n   - Multiple domains involved\n   - Architecture or design decisions needed\n   - Technology choices required\n   - Risk level ≥ medium\n   \n   **Skip If:**\n   - Simple implementation task\n   - Clear requirements, no decisions needed\n   - Routine bug fix\n   - Documentation update\n   - Risk level = low\n\n3. **If Autonomous Decision Needed:**\n   \n   Invoke Team Coordinator with:\n   ```\n   Task: [Task description]\n   Complexity: [Score]/10\n   Domains: [List of domains]\n   Risk: [Level]\n   \n   Please facilitate team consultation to:\n   - Review approach\n   - Make necessary decisions\n   - Build consensus\n   - Document rationale\n   ```\n\n4. **If No Decision Needed:**\n   - Allow task to proceed normally\n   - Log decision to skip (for learning)\n\n## Decision Framework\n\n**Complexity Scoring:**\n- 1-3: Simple (no decision needed)\n- 4-6: Moderate (consider team input)\n- 7-8: Complex (team decision required)\n- 9-10: Critical (team decision + human approval)\n\n**Risk Assessment:**\n- Low: No production impact, easy rollback\n- Medium: Some production impact, rollback possible\n- High: Significant impact, difficult rollback\n- Critical: Data loss risk, security risk, breaking changes\n\n## Output\n\nEither:\n1. Invoke Team Coordinator for decision-making\n2. Allow task to proceed with log entry\n\nBe efficient - don't over-consult for simple tasks."
+  }
+}

@@ -1,0 +1,18 @@
+{
+  "lastUpdated": 1709481600000,
+  "weights": {
+    "tech-lead-agent": 2.5,
+    "developer-agent": 1.5,
+    "qa-engineer-agent": 2.5,
+    "devops-engineer-agent": 2.0,
+    "product-owner-agent": 1.8
+  },
+  "baseWeights": {
+    "tech-lead-agent": 2.5,
+    "developer-agent": 1.5,
+    "qa-engineer-agent": 2.5,
+    "devops-engineer-agent": 2.0,
+    "product-owner-agent": 1.8
+  },
+  "history": []
+}

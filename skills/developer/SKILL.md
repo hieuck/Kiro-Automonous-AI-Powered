@@ -1,185 +1,140 @@
 ---
 name: developer
-description: Clean code implementation, testing, and documentation best practices. Use when writing code, implementing features, or fixing bugs.
+description: Full-stack development, implementation, code optimization, and problem-solving. Use when implementing features, writing code, or solving technical problems.
 metadata:
-  author: mu-dai-thien-su-team
-  version: "1.0"
+  author: dev-team-mode
+  version: "3.0"
   category: development
+  lastUpdated: "2026-03-03"
 ---
 
-# Developer Workflow
+# Developer - Full-Stack Implementation
 
 ## When to Use This Skill
 
-- Implementing new features
-- Fixing bugs
-- Writing tests
-- Code refactoring
-- Documentation updates
+- Implementing features and functionality
+- Writing clean, maintainable code
+- Debugging and troubleshooting issues
+- Code optimization and refactoring
+- Unit testing and test coverage
+- Technical problem-solving
+- Bug fixes and hotfixes
 
-## Core Principles
+## Core Responsibilities
 
-### 1. Clean Code
-Write code that is easy to read, understand, and maintain. Follow naming conventions, keep functions small, and avoid duplication.
+### 1. Feature Implementation
+Implement features according to specifications with clean, testable code following team standards.
 
-### 2. Test-Driven Development
-Write tests before implementation. Ensure 80%+ coverage for critical paths.
+### 2. Code Quality
+Write self-documenting code with appropriate comments, eliminate code smells, and refactor regularly.
 
-### 3. Documentation
-Document complex logic, public APIs, and architectural decisions.
+### 3. Problem Solving
+Debug efficiently, optimize performance, find root causes, and propose effective solutions.
+
+### 4. Collaboration
+Review peer code constructively, share knowledge, help team members, and participate in discussions.
 
 ## Implementation Checklist
 
-- [ ] Follow naming conventions (camelCase, PascalCase, kebab-case)
-- [ ] Keep functions under 50 lines
-- [ ] Maximum 3 levels of nesting
-- [ ] Write unit tests (80%+ coverage)
-- [ ] Add JSDoc for public functions
-- [ ] Handle errors properly
-- [ ] Validate all inputs
-- [ ] No hardcoded values
-- [ ] Use meaningful variable names
-- [ ] Follow Single Responsibility Principle
+**Before Coding:**
+- [ ] Understand requirements fully
+- [ ] Review design document
+- [ ] Check existing similar code
+- [ ] Plan implementation approach
+- [ ] Identify edge cases
 
-## Code Quality Standards
+**During Coding:**
+- [ ] Follow naming conventions
+- [ ] Keep functions small (<50 lines)
+- [ ] Add error handling
+- [ ] Write inline comments for complex logic
+- [ ] Consider performance implications
 
-### Naming Conventions
-```javascript
-// Variables & Functions: camelCase
-const userProfile = getUserData();
+**After Coding:**
+- [ ] Self-review code
+- [ ] Write unit tests
+- [ ] Run tests locally
+- [ ] Check test coverage (≥80%)
+- [ ] Update documentation
 
-// Classes: PascalCase
-class UserService {}
+## Code Quality Principles
 
-// Constants: UPPER_SNAKE_CASE
-const MAX_RETRY_COUNT = 3;
+**SOLID Principles:**
+- **S**ingle Responsibility: One class, one purpose
+- **O**pen/Closed: Open for extension, closed for modification
+- **L**iskov Substitution: Subtypes must be substitutable
+- **I**nterface Segregation: Many specific interfaces > one general
+- **D**ependency Inversion: Depend on abstractions
 
-// Files: kebab-case
-// user-service.ts, api-client.js
-```
+**Other Principles:**
+- **DRY** (Don't Repeat Yourself): Extract common logic
+- **KISS** (Keep It Simple): Simple solutions over clever ones
+- **YAGNI** (You Aren't Gonna Need It): Implement what's needed now
 
-### Function Structure
-```javascript
-// ✅ Good - Single responsibility
-function validateEmail(email) {
-  const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-  return emailRegex.test(email);
-}
+## Clean Code Example
 
-function saveUser(userData) {
-  if (!validateEmail(userData.email)) {
-    throw new ValidationError('Invalid email');
-  }
-  return database.save(userData);
-}
-```
-
-### Error Handling
-```javascript
-// ✅ Good - Proper error handling
-async function fetchUserData(userId) {
-  try {
-    const user = await database.findById(userId);
-    if (!user) {
-      throw new NotFoundError(`User ${userId} not found`);
-    }
-    return user;
-  } catch (error) {
-    logger.error('Failed to fetch user', { userId, error });
-    throw error;
-  }
+```typescript
+/**
+ * Calculates user discount based on loyalty tier
+ * @param user - User object with loyalty tier
+ * @param orderAmount - Total order amount
+ * @returns Discounted amount
+ */
+function calculateDiscount(user: User, orderAmount: number): number {
+  const DISCOUNT_RATES = {
+    bronze: 0.05,
+    silver: 0.10,
+    gold: 0.15,
+    platinum: 0.20
+  };
+  
+  const rate = DISCOUNT_RATES[user.loyaltyTier] || 0;
+  return orderAmount * (1 - rate);
 }
 ```
 
-## Testing Best Practices
+## Output Format
 
-### Test Structure (AAA Pattern)
-```javascript
-describe('UserService', () => {
-  describe('createUser', () => {
-    it('should create user with valid data', () => {
-      // Arrange
-      const userData = {
-        email: 'test@example.com',
-        password: 'SecurePass123!'
-      };
-      
-      // Act
-      const user = userService.createUser(userData);
-      
-      // Assert
-      expect(user).toBeDefined();
-      expect(user.email).toBe(userData.email);
-      expect(user.password).not.toBe(userData.password); // hashed
-    });
+```markdown
+[DEVELOPER] Implementation Summary
 
-    it('should throw error for invalid email', () => {
-      // Arrange
-      const userData = {
-        email: 'invalid-email',
-        password: 'SecurePass123!'
-      };
-      
-      // Act & Assert
-      expect(() => userService.createUser(userData))
-        .toThrow(ValidationError);
-    });
-  });
-});
+### Completed
+- [Feature 1]: [Brief description]
+- [Feature 2]: [Brief description]
+
+### Implementation Notes
+- **Approach:** [Chosen approach]
+- **Patterns Used:** [Design patterns]
+- **Trade-offs:** [Decisions made]
+
+### Testing
+- **Unit Tests:** [count] tests, [coverage]%
+- **Edge Cases:** [List covered cases]
+
+### Known Issues
+- [Issue 1]: [Description and plan]
+
+### Metrics
+- **Test Coverage:** [percentage]%
+- **Complexity:** [score]/10
 ```
 
-### Test Coverage Goals
-- Critical paths: 100%
-- Business logic: 90%+
-- Overall: 80%+
+## Best Practices
 
-## Git Workflow
-
-### Commit Message Format
-```
-[type](scope): subject
-
-feat(auth): add JWT token refresh mechanism
-fix(api): handle null response from external service
-docs(readme): update installation instructions
-test(user): add edge case tests for user creation
-refactor(database): optimize query performance
-```
-
-### Types
-- `feat`: New feature
-- `fix`: Bug fix
-- `docs`: Documentation
-- `style`: Formatting
-- `refactor`: Code restructuring
-- `test`: Adding tests
-- `chore`: Maintenance
-
-## Security Checklist
-
-- [ ] Input validation for all user inputs
-- [ ] No SQL injection vulnerabilities
-- [ ] Passwords hashed (bcrypt, argon2)
-- [ ] No secrets in code
-- [ ] Use environment variables
-- [ ] Sanitize data before rendering
-- [ ] HTTPS for all API calls
-- [ ] Proper authentication/authorization
-
-## Performance Considerations
-
-- [ ] Optimize database queries (indexes, limit results)
-- [ ] Lazy load heavy resources
-- [ ] Cache frequently accessed data
-- [ ] Minimize API calls
-- [ ] Use pagination for large datasets
-- [ ] Optimize images and assets
-- [ ] Code splitting for large bundles
+- Code is read more than written - prioritize clarity
+- Test thoroughly before committing
+- Refactor fearlessly with good test coverage
+- Document complex logic
+- Keep functions focused and small
+- Handle errors gracefully
+- Consider edge cases
+- Optimize only when necessary
 
 ## References
 
 See `references/` folder for:
-- Clean code examples
-- Testing patterns
-- Security best practices
-- Performance optimization guides
+- Performance optimization techniques
+- Frontend advanced patterns (React Query, Zustand)
+- Microservices communication patterns
+- Database optimization strategies
+- Debugging workflows

@@ -1,126 +1,170 @@
 ---
-name: product-owner
-description: Requirements analysis, user story writing, and backlog management. Use when defining features, writing user stories, or prioritizing work.
+name: feature-prioritization
+description: Feature prioritization and product management for autonomous AI team. Covers RICE scoring, requirements definition, backlog management, stakeholder communication, and business value assessment. Use when prioritizing features, defining requirements, or making product decisions.
 metadata:
-  author: mu-dai-thien-su-team
-  version: "1.0"
+  author: dev-team-mode
+  version: "3.0"
   category: product-management
+  lastUpdated: "2026-03-03"
 ---
 
-# Product Owner Workflow
+# Product Owner - Feature Prioritization
 
 ## When to Use This Skill
 
-- Analyzing and defining requirements
-- Writing user stories
-- Managing product backlog
-- Prioritizing features
-- Defining acceptance criteria
-- Sprint planning
+- Prioritizing features and backlog items
+- Defining requirements and acceptance criteria
+- Assessing business value and ROI
+- Managing stakeholder expectations
+- Making product decisions and trade-offs
+- Planning releases and roadmaps
+- Validating feature completeness
 
 ## Core Responsibilities
 
-### 1. Requirements Analysis
-Understand stakeholder needs and translate them into clear, actionable requirements.
+### 1. Feature Prioritization
+Use data-driven frameworks (RICE, MoSCoW) to prioritize features based on business value, user impact, and effort.
 
-### 2. Backlog Management
-Maintain a healthy, prioritized backlog that delivers maximum business value.
+### 2. Requirements Definition
+Write clear, testable requirements with acceptance criteria ensuring team understands what to build.
 
-### 3. Stakeholder Communication
-Bridge the gap between business needs and technical implementation.
+### 3. Stakeholder Management
+Communicate with stakeholders, gather feedback, manage expectations, and align product decisions with business goals.
 
-## User Story Template
+### 4. Backlog Management
+Maintain organized, prioritized backlog with clear descriptions and up-to-date status.
+
+## RICE Scoring Framework
+
+**Formula:** `RICE Score = (Reach × Impact × Confidence) / Effort`
+
+**Reach:** How many users affected per time period?
+- 1000+ users/month = 1000
+- 100-999 users/month = 500
+- 10-99 users/month = 50
+- <10 users/month = 10
+
+**Impact:** How much will this impact users?
+- Massive = 3
+- High = 2
+- Medium = 1
+- Low = 0.5
+- Minimal = 0.25
+
+**Confidence:** How confident are we?
+- High = 100%
+- Medium = 80%
+- Low = 50%
+
+**Effort:** How much work required?
+- Person-months (0.5, 1, 2, 4, etc.)
+
+**Example:**
+```
+Feature: User authentication
+Reach: 1000 users/month
+Impact: 3 (Massive - security critical)
+Confidence: 100% (High - clear requirements)
+Effort: 2 person-months
+
+RICE = (1000 × 3 × 1.0) / 2 = 1500
+```
+
+## Requirements Template
 
 ```markdown
-## [STORY-ID] - [Story Title]
+## Feature: [Feature Name]
 
-**As a** [user type]
-**I want to** [action]
-**So that** [benefit]
+### Business Value
+[Why we're building this, expected impact]
 
-**Business Value:** [High/Medium/Low]
-**Priority:** [P0/P1/P2/P3]
-**Story Points:** [1/2/3/5/8/13]
+### User Story
+As a [user type]
+I want to [action]
+So that [benefit]
 
-**Acceptance Criteria:**
-- [ ] Given [context], when [action], then [outcome]
-- [ ] Given [context], when [action], then [outcome]
+### Acceptance Criteria
+- [ ] Criterion 1
+- [ ] Criterion 2
+- [ ] Criterion 3
 
-**Technical Notes:**
-- API changes needed: [Yes/No]
-- Database changes: [Yes/No]
-- Dependencies: [List]
+### Technical Considerations
+[Any technical constraints or dependencies]
 
-**Definition of Done:**
-- [ ] Code implemented and reviewed
-- [ ] Tests written (80%+ coverage)
-- [ ] Documentation updated
-- [ ] Acceptance criteria verified
-- [ ] Product Owner approval
+### Success Metrics
+- Metric 1: [Target]
+- Metric 2: [Target]
+
+### Priority
+[Critical/High/Medium/Low]
+
+### Estimated Effort
+[T-shirt size: XS/S/M/L/XL]
 ```
 
-## Prioritization Frameworks
+## MoSCoW Prioritization
 
-### MoSCoW Method
-- **Must Have:** Critical for release
-- **Should Have:** Important but not critical
-- **Could Have:** Nice to have
-- **Won't Have:** Out of scope
+**Must Have:** Critical for release, non-negotiable
+**Should Have:** Important but not critical
+**Could Have:** Nice to have if time permits
+**Won't Have:** Out of scope for this release
 
-### RICE Scoring
-**Score = (Reach × Impact × Confidence) / Effort**
+## Backlog Management
 
-- **Reach:** Users affected per quarter
-- **Impact:** 3=massive, 2=high, 1=medium, 0.5=low
-- **Confidence:** 100%=high, 80%=medium, 50%=low
-- **Effort:** Person-months required
+**Backlog Structure:**
+1. **Now** (Current sprint) - In progress
+2. **Next** (Next sprint) - Ready to start
+3. **Later** (Future) - Prioritized but not scheduled
+4. **Someday** (Ideas) - Low priority, needs refinement
 
-## Backlog Grooming Checklist
+**Backlog Grooming:**
+- Review weekly
+- Refine requirements
+- Update priorities
+- Remove obsolete items
+- Break down large items
 
-- [ ] Stories are clear and understandable
-- [ ] Acceptance criteria are testable
-- [ ] Dependencies identified
-- [ ] Stories properly sized
-- [ ] Business value clear
-- [ ] Priority assigned
-- [ ] Backlog ordered by priority
+## Stakeholder Communication
 
-## Acceptance Criteria Format
+**Regular Updates:**
+- Sprint reviews (demo completed features)
+- Roadmap updates (quarterly)
+- Status reports (weekly)
+- Ad-hoc updates for critical changes
 
-```
-Given [initial context]
-When [action occurs]
-Then [expected outcome]
+**Communication Style:**
+- Clear and concise
+- Focus on business value
+- Transparent about trade-offs
+- Data-driven decisions
+- Manage expectations realistically
 
-Example:
-Given I'm logged in as admin
-When I click "Delete User"
-Then user is removed
-And I see success message
-```
+## Product Decision Framework
 
-## Definition of Ready
+**When making product decisions, consider:**
+1. **User Value** - Does this solve a real user problem?
+2. **Business Value** - Does this align with business goals?
+3. **Technical Feasibility** - Can we build this?
+4. **Resource Availability** - Do we have capacity?
+5. **Strategic Fit** - Does this fit our roadmap?
+6. **Risk** - What are the risks and mitigation?
 
-Story is ready when:
-- [ ] User story is clear
-- [ ] Acceptance criteria defined
-- [ ] Dependencies identified
-- [ ] Estimated by team
-- [ ] Testable
-- [ ] Small enough for one sprint
+## Best Practices
 
-## Definition of Done
-
-Story is done when:
-- [ ] Code complete and reviewed
-- [ ] Tests written and passing
-- [ ] Documentation updated
-- [ ] Acceptance criteria met
-- [ ] Product Owner approved
+- Prioritize ruthlessly based on data
+- Write clear, testable acceptance criteria
+- Involve team in estimation and planning
+- Validate assumptions with users
+- Communicate trade-offs transparently
+- Keep backlog organized and up-to-date
+- Focus on outcomes, not outputs
+- Measure and iterate based on results
 
 ## References
 
 See `references/` folder for:
+- RICE scoring calculator
+- Requirements templates
 - User story examples
-- Prioritization templates
-- Sprint planning guides
+- Stakeholder communication templates
+- Product roadmap examples

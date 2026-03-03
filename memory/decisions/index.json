@@ -1,0 +1,17 @@
+{
+  "lastUpdated": 1709481600000,
+  "totalDecisions": 0,
+  "decisionsByType": {
+    "architecture": 0,
+    "technical": 0,
+    "business": 0
+  },
+  "decisionsByAgent": {
+    "tech-lead-agent": 0,
+    "developer-agent": 0,
+    "qa-engineer-agent": 0,
+    "devops-engineer-agent": 0,
+    "product-owner-agent": 0
+  },
+  "recentDecisions": []
+}

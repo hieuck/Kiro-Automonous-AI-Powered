@@ -261,22 +261,36 @@ Mỗi skill có:
 - ✅ 4 memory components validated
 - ✅ All systems ready for autonomous operations
 
-### 🔄 Phase 4: First Real Tasks (TIẾP THEO)
-**Thời gian dự kiến:** 1 tuần  
-**Mục tiêu:** Bắt đầu làm việc với tasks thực tế
+### 🔄 Phase 4: First Real Tasks (ĐANG THỰC HIỆN)
+**Thời gian:** Bắt đầu 3 tháng 3, 2026  
+**Mục tiêu:** Bắt đầu làm việc với tasks thực tế từ dự án muh5
+
+**Dự án:** Mu Đại Thiên Sứ H5 Game
+- MMORPG HTML5 game (Phaser 3 + Node.js/TypeScript)
+- Spec location: `.kiro/specs/mu-dai-thien-su-h5-game/`
+- Current progress: Phase 1-2 complete (infrastructure + world systems)
+
+**Tasks được chọn:**
+1. ✅ Task 1: Combat System Core (complexity 6/10, priority)
+2. ✅ Task 2: Combat Validation (complexity 5/10, priority)
+3. ✅ Task 3: Experience and Leveling (complexity 4/10, priority)
+4. ⏳ Task 4: Combat Property Tests (complexity 7/10, optional)
+5. ⏳ Task 5: Combat UI (complexity 5/10, optional)
 
 **Cần làm:**
-- [ ] Chọn 3-5 tasks đơn giản để test
-- [ ] Để team tự quyết định và thực hiện
-- [ ] Monitor decision-making process
-- [ ] Verify decision logging works
-- [ ] Check quality gates
+- [ ] Execute 3-5 tasks autonomously
+- [ ] Log 5-10 decisions with full context
+- [ ] Pass quality gates (≥80%)
 - [ ] Collect first metrics
+- [ ] Verify autonomous operations
 
 **Kết quả mong đợi:** 
 - 5-10 decisions logged
 - First baseline metrics
 - System working in practice
+- 80%+ autonomy rate
+
+**Plan:** `.kiro/PHASE-4-FIRST-REAL-TASKS.md`
 
 ### 🔄 Phase 5: Learning System Activation (SAU PHASE 4)
 **Thời gian dự kiến:** 2-3 tuần  

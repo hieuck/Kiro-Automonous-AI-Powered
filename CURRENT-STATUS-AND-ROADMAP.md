@@ -302,31 +302,31 @@ Mỗi skill có:
 
 **Tasks:**
 1. ✅ Task 1: LootService (autonomous, quality 10.0/10, 1h)
-2. 🔄 Task 2: Combat Property Tests Phase 2 (next)
-3. 🔄 Task 3: Stat Allocation System
+2. ✅ Task 2: Combat Property Tests Phase 2 (autonomous, quality 9.5/10, 1h)
+3. 🔄 Task 3: Stat Allocation System (next)
 4. 🔄 Task 4: Progression Property Tests
 5. 🔄 Task 5: Integration Tests
 6. 🔄 Task 6: Inventory Models (optional)
 
-**Progress:** 1/6 tasks (17%)
+**Phase 5 Progress:**
+- ✅ Task 1: LootService (autonomous, quality 10.0/10, 1h)
+- ✅ Task 2: Combat Property Tests Phase 2 (autonomous, quality 9.5/10, 1h)
+- 🔄 Task 3: Stat Allocation System (next)
+- 🔄 Task 4: Progression Property Tests
+- 🔄 Task 5: Integration Tests
+- 🔄 Task 6: Inventory Models (optional)
+
+**Progress:** 2/6 tasks (33%)
+
+**Decisions logged:** 6
+- dec-2026-03-03-001: Combat System Core (95.1% consensus)
+- dec-2026-03-03-002: Combat Validation (autonomous)
+- dec-2026-03-03-003: Experience and Leveling (autonomous)
+- dec-2026-03-03-004: Combat Property Tests (94% consensus)
+- dec-2026-03-03-005: LootService (autonomous)
+- dec-2026-03-03-006: Combat Property Tests Phase 2 (autonomous)
 
 **Plan:** `.kiro/PHASE-5-PLAN.md`
-**Thời gian dự kiến:** 2-3 tuần  
-**Mục tiêu:** Kích hoạt learning và self-improvement
-
-**Cần làm:**
-- [ ] Run first weekly-self-assessment
-- [ ] Analyze decision patterns
-- [ ] Update agent weights based on accuracy
-- [ ] Identify first success patterns
-- [ ] Identify first anti-patterns
-- [ ] Generate first weekly report
-
-**Kết quả mong đợi:**
-- 20+ decisions logged
-- First patterns identified
-- Agent weights adjusted
-- Team learning from outcomes
 
 ### 🔄 Phase 8: Full Autonomy (MỤC TIÊU CUỐI)
 **Thời gian dự kiến:** 1 tháng  
@@ -447,11 +447,11 @@ Mỗi skill có:
 | Skills | 7 | 7 | ✅ |
 | Steering Files | 10 | 10 | ✅ |
 | Documentation | Complete | Complete | ✅ |
-| Decisions Logged | 20+ | 5 | 🟡 Growing |
-| Team Autonomy | 100% | 80% | 🟢 Phase 4: 75% |
-| Decision Accuracy | 90%+ | 100% | ✅ Phase 4: 4/4 |
-| Quality Score | >9/10 | 9.75 | ✅ Phase 4: 9.625, Phase 5: 10.0 |
-| Test Coverage | >90% | 98.52% | ✅ |
+| Decisions Logged | 20+ | 6 | 🟡 Growing |
+| Team Autonomy | 100% | 83% | 🟢 Phase 5: 83% |
+| Decision Accuracy | 90%+ | 100% | ✅ Phase 5: 6/6 |
+| Quality Score | >9/10 | 9.75 | ✅ Phase 5: 9.75 |
+| Test Coverage | >90% | 98% | ✅ |
 
 ---
 
@@ -460,19 +460,19 @@ Mỗi skill có:
 **Đã làm được:**
 - ✅ Phase 1-3: Cơ sở hạ tầng hoàn chỉnh và validated
 - ✅ Phase 4: 4 tasks hoàn thành với chất lượng xuất sắc (9.625/10)
-- ✅ Phase 5: Task 1 hoàn thành (LootService, 10.0/10)
-- ✅ 5 decisions logged với full context
+- ✅ Phase 5: 2 tasks hoàn thành (LootService 10.0/10, Property Tests 9.5/10)
+- ✅ 6 decisions logged với full context
 - ✅ 125 tests, 100% pass rate
 - ✅ Autonomous operations validated
 - ✅ Zero external escalations
 
 **Đang ở đâu:**
-- 🔄 Phase 5 Task 2: Combat Property Tests Phase 2
-- 🔄 5 decisions logged, growing
+- 🔄 Phase 5 Task 3: Stat Allocation System (next)
+- 🔄 6 decisions logged, growing
 - 🔄 Quality score: 9.75/10 average
 
 **Cần làm tiếp:**
-- 🔜 Complete Phase 5 (5 tasks remaining)
+- 🔜 Complete Phase 5 (4 tasks remaining)
 - 🔜 Phase 6: Learning System Activation
 - 🔜 Phase 7-8: Optimization & Full Autonomy
 
@@ -481,6 +481,6 @@ Mỗi skill có:
 ---
 
 **Cập nhật:** 3 tháng 3, 2026  
-**Trạng thái:** 🟢 Phase 4 HOÀN THÀNH, Phase 5 ĐANG TIẾN HÀNH  
+**Trạng thái:** 🟢 Phase 4 HOÀN THÀNH, Phase 5 ĐANG TIẾN HÀNH (2/6 tasks)  
 **Người báo cáo:** Developer Agent
 

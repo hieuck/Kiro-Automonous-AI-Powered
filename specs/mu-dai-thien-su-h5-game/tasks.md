@@ -388,19 +388,21 @@ The implementation follows these principles:
     - **Status: COMPLETED** - 39 unit tests passing
 
 - [ ] 12. Inventory and item system
-  - [~] 12.1 Create item data models
+  - [x] 12.1 Create item data models
     - Define Item interface with all properties
     - Create ItemType enum
     - Define ItemOption for special effects
     - Create InventorySlot interface
     - _Requirements: 14.1_
+    - **Status: COMPLETED** - Item types with ItemOption and special effects
 
-  - [~] 12.2 Implement inventory repository
+  - [x] 12.2 Implement inventory repository
     - Create database operations for inventory
     - Implement item CRUD operations
     - Add inventory slot management
     - Handle item stacking for consumables
     - _Requirements: 5.2, 5.3_
+    - **Status: COMPLETED** - Full CRUD operations with slot management and stacking
 
   - [~] 12.3 Create inventory service
     - Implement item pickup logic

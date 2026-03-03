@@ -323,20 +323,20 @@ The implementation follows these principles:
     - Implement hit feedback and sounds
     - _Requirements: 3.3_
 
-  - [~] 10.6 Optimize combat performance
+  - [x] 10.6 Optimize combat performance
     - Ensure combat actions process within 100ms
     - Implement combat event batching
     - Add combat metrics tracking
     - _Requirements: 3.6_
 
-  - [~] 10.7 Write property tests for combat
+  - [x] 10.7 Write property tests for combat
     - **Property 5: Damage Calculation Consistency**
     - **Property 6: Monster Death and Rewards**
     - **Property 7: Character Death**
     - **Property 8: Loot Generation**
     - **Validates: Requirements 3.2, 3.4, 3.5, 3.7**
 
-  - [~] 10.8 Write unit tests for combat edge cases
+  - [x] 10.8 Write unit tests for combat edge cases
     - Test damage with various stat combinations
     - Test minimum damage enforcement
     - Test loot drop rate probabilities

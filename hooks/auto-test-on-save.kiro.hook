@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "name": "Auto Test on Save",
+  "description": "Automatically run tests when test files are saved",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "muh5/packages/server/src/**/*.test.ts",
+      "muh5/packages/server/src/**/*.property.test.ts"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "cd muh5 && npm test -- --testPathPattern=\"${file}\" --run",
+    "timeout": 60
+  }
+}

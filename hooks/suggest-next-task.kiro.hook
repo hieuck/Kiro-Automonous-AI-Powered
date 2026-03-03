@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Suggest Next Task",
+  "description": "Suggest what to implement next based on current progress",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Based on the current state of the muh5 project:\n1. Check the spec in .kiro/specs/mu-dai-thien-su-h5-game/\n2. Review what's been implemented\n3. Suggest the next logical task to work on\n4. Explain why it's a good next step\n\nBe specific and actionable."
+  }
+}

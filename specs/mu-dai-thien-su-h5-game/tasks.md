@@ -287,13 +287,13 @@ The implementation follows these principles:
   - Ensure all tests pass, ask the user if questions arise.
 
 - [ ] 10. Combat system implementation
-  - [ ] 10.1 Create combat data models
+  - [x] 10.1 Create combat data models
     - Define CombatResult and SkillResult interfaces
     - Create damage calculation formulas
     - Define combat event types
     - _Requirements: 3.2_
 
-  - [ ] 10.2 Implement combat system core
+  - [x] 10.2 Implement combat system core
     - Create CombatSystem class with damage calculation
     - Implement basic attack processing
     - Add skill damage with multipliers
@@ -301,41 +301,42 @@ The implementation follows these principles:
     - Apply equipment bonuses to damage
     - _Requirements: 3.2_
 
-  - [ ] 10.3 Add combat validation
+  - [x] 10.3 Add combat validation
     - Create CombatValidator for range checking
     - Validate cooldown requirements
     - Check mana costs for skills
     - Implement action rate limiting
     - _Requirements: 6.3, 18.1_
 
-  - [ ] 10.4 Implement death and loot system
+  - [x] 10.4 Implement death and loot system
     - Add entity death detection
     - Create loot generation from drop tables
     - Implement experience point rewards
     - Add character death and respawn mechanics
+    - **Status: COMPLETED** - DeathService with character/monster death, respawn system, 22 tests passing
     - _Requirements: 3.4, 3.5, 3.7_
 
-  - [ ] 10.5 Create combat UI and effects (client)
+  - [~] 10.5 Create combat UI and effects (client)
     - Display damage numbers with animations
     - Show health bars for characters and monsters
     - Add combat animation effects
     - Implement hit feedback and sounds
     - _Requirements: 3.3_
 
-  - [ ] 10.6 Optimize combat performance
+  - [~] 10.6 Optimize combat performance
     - Ensure combat actions process within 100ms
     - Implement combat event batching
     - Add combat metrics tracking
     - _Requirements: 3.6_
 
-  - [ ] 10.7 Write property tests for combat
+  - [~] 10.7 Write property tests for combat
     - **Property 5: Damage Calculation Consistency**
     - **Property 6: Monster Death and Rewards**
     - **Property 7: Character Death**
     - **Property 8: Loot Generation**
     - **Validates: Requirements 3.2, 3.4, 3.5, 3.7**
 
-  - [ ] 10.8 Write unit tests for combat edge cases
+  - [~] 10.8 Write unit tests for combat edge cases
     - Test damage with various stat combinations
     - Test minimum damage enforcement
     - Test loot drop rate probabilities
@@ -344,7 +345,7 @@ The implementation follows these principles:
 
 
 - [ ] 11. Character progression system
-  - [ ] 11.1 Implement experience and leveling
+  - [~] 11.1 Implement experience and leveling
     - Create experience accumulation logic
     - Implement level-up threshold calculation
     - Add level-up stat increases
@@ -352,54 +353,54 @@ The implementation follows these principles:
     - Trigger level-up events
     - _Requirements: 4.1, 4.2, 4.3, 4.5_
 
-  - [ ] 11.2 Create stat allocation system
+  - [~] 11.2 Create stat allocation system
     - Implement stat point allocation (Strength, Agility, Vitality, Energy)
     - Validate stat allocation requests
     - Update character stats on allocation
     - Recalculate derived stats (health, mana, attack, defense)
     - _Requirements: 4.5_
 
-  - [ ] 11.3 Implement skill unlocking
+  - [~] 11.3 Implement skill unlocking
     - Create skill unlock system based on level thresholds
     - Define skill trees for each character class
     - Add skill unlock notifications
     - _Requirements: 4.6, 6.1_
 
-  - [ ] 11.4 Create progression UI (client)
+  - [~] 11.4 Create progression UI (client)
     - Display experience bar and level
     - Show level-up notification with visual effects
     - Create stat allocation interface
     - Display available stat points
     - _Requirements: 4.4_
 
-  - [ ] 11.5 Write property tests for progression
+  - [~] 11.5 Write property tests for progression
     - **Property 9: Experience Accumulation**
     - **Property 10: Level Up Stat Increases**
     - **Property 11: Skill Unlocking**
     - **Validates: Requirements 4.1, 4.2, 4.3, 4.5, 4.6, 6.1**
 
-  - [ ] 11.6 Write unit tests for progression
+  - [~] 11.6 Write unit tests for progression
     - Test experience threshold calculations
     - Test stat point allocation validation
     - Test skill unlock conditions
     - _Requirements: 4.1, 4.2, 4.5, 4.6_
 
 - [ ] 12. Inventory and item system
-  - [ ] 12.1 Create item data models
+  - [~] 12.1 Create item data models
     - Define Item interface with all properties
     - Create ItemType enum
     - Define ItemOption for special effects
     - Create InventorySlot interface
     - _Requirements: 14.1_
 
-  - [ ] 12.2 Implement inventory repository
+  - [~] 12.2 Implement inventory repository
     - Create database operations for inventory
     - Implement item CRUD operations
     - Add inventory slot management
     - Handle item stacking for consumables
     - _Requirements: 5.2, 5.3_
 
-  - [ ] 12.3 Create inventory service
+  - [~] 12.3 Create inventory service
     - Implement item pickup logic
     - Add inventory full detection
     - Create item movement between slots
@@ -407,7 +408,7 @@ The implementation follows these principles:
     - Handle item removal
     - _Requirements: 5.2, 5.3, 5.4, 5.5_
 
-  - [ ] 12.4 Build inventory UI (client)
+  - [~] 12.4 Build inventory UI (client)
     - Create 8x8 inventory grid display
     - Implement drag-and-drop for items
     - Add item tooltips with stats
@@ -415,13 +416,13 @@ The implementation follows these principles:
     - Display item icons and quantities
     - _Requirements: 5.1, 5.4, 5.7_
 
-  - [ ] 12.5 Write property tests for inventory
+  - [~] 12.5 Write property tests for inventory
     - **Property 12: Inventory Item Placement**
     - **Property 13: Inventory Item Movement**
     - **Property 15: Consumable Item Usage**
     - **Validates: Requirements 5.2, 5.4, 5.5**
 
-  - [ ] 12.6 Write unit tests for inventory edge cases
+  - [~] 12.6 Write unit tests for inventory edge cases
     - Test inventory full scenarios
     - Test item stacking limits
     - Test drag-and-drop validation

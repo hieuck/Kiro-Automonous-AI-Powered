@@ -1,0 +1,18 @@
+{
+  "enabled": true,
+  "name": "Auto Lint Fix",
+  "description": "Auto-fix linting issues when TypeScript files are saved",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "muh5/packages/server/src/**/*.ts",
+      "muh5/packages/client/src/**/*.ts"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "cd muh5 && npm run lint -- --fix",
+    "timeout": 30
+  }
+}

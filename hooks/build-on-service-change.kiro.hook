@@ -1,0 +1,17 @@
+{
+  "enabled": true,
+  "name": "Build on Service Change",
+  "description": "Build server when service files are modified to catch TypeScript errors early",
+  "version": "1",
+  "when": {
+    "type": "fileEdited",
+    "patterns": [
+      "muh5/packages/server/src/services/**/*.ts"
+    ]
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "cd muh5/packages/server && npm run build",
+    "timeout": 45
+  }
+}

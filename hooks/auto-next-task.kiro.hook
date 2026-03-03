@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Auto Next Task Executor",
+  "description": "Automatically analyzes spec progress, identifies next logical task, and executes it autonomously following best practices",
+  "version": "1",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Analyze the spec in .kiro/specs/mu-dai-thien-su-h5-game/ to identify the next incomplete task. Then IMMEDIATELY proceed to implement it following these rules:\n\n1. Review spec tasks.md to find first incomplete task (marked with [ ])\n2. Identify the specific subtask to implement\n3. DO NOT ask for confirmation - proceed directly to implementation\n4. Follow best practices:\n   - Write tests first (TDD approach)\n   - Implement minimal working solution\n   - Run tests to verify\n   - Commit with clear message following format: <type>(scope): description\n5. Update tasks.md to mark completed subtasks with [x]\n6. If task requires team decision (complexity ≥5), invoke team-coordinator\n7. After completion, provide brief summary (2-3 sentences max)\n\nCRITICAL: Do not ask \"would you like me to...\" - just do it. This is autonomous mode."
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "enabled": true,
+  "name": "Post-Implementation Quality Review",
+  "description": "Automatically reviews completed code for bugs, performance, security, and quality issues, then applies best practices improvements",
+  "version": "1",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Review the code just implemented. Check for:\n1. Bugs and edge cases - FIX immediately\n2. Performance issues - OPTIMIZE now\n3. Security concerns - SECURE immediately\n4. Missing tests - ADD property-based tests\n5. Code quality - REFACTOR to best practices\n\nApply ALL improvements automatically:\n- Extract magic numbers to constants\n- Add input validation and sanitization\n- Optimize with Set/Map for O(1) lookups\n- Add property-based tests with fast-check\n- Standardize error messages\n- Add missing JSDoc\n- Fix type safety issues\n- Add integration tests\n\nAfter fixes, run tests to verify. Be thorough and proactive."
+  }
+}

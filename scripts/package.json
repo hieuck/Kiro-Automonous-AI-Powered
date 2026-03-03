@@ -1,0 +1,12 @@
+{
+  "name": "kiro-scripts",
+  "version": "1.0.0",
+  "description": "Background scripts for Kiro development workflow",
+  "private": true,
+  "dependencies": {
+    "chokidar": "^3.6.0"
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  }
+}

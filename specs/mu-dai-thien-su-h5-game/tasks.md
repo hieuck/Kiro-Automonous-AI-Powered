@@ -373,11 +373,12 @@ The implementation follows these principles:
     - Display available stat points
     - _Requirements: 4.4_
 
-  - [~] 11.5 Write property tests for progression
+  - [x] 11.5 Write property tests for progression
     - **Property 9: Experience Accumulation**
     - **Property 10: Level Up Stat Increases**
     - **Property 11: Skill Unlocking**
     - **Validates: Requirements 4.1, 4.2, 4.3, 4.5, 4.6, 6.1**
+    - **Status: COMPLETED** - 15 property tests passing (100 runs each)
 
   - [~] 11.6 Write unit tests for progression
     - Test experience threshold calculations

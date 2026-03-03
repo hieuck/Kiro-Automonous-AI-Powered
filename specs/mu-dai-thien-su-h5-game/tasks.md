@@ -345,7 +345,7 @@ The implementation follows these principles:
 
 
 - [ ] 11. Character progression system
-  - [~] 11.1 Implement experience and leveling
+  - [x] 11.1 Implement experience and leveling
     - Create experience accumulation logic
     - Implement level-up threshold calculation
     - Add level-up stat increases
@@ -353,14 +353,14 @@ The implementation follows these principles:
     - Trigger level-up events
     - _Requirements: 4.1, 4.2, 4.3, 4.5_
 
-  - [~] 11.2 Create stat allocation system
+  - [x] 11.2 Create stat allocation system
     - Implement stat point allocation (Strength, Agility, Vitality, Energy)
     - Validate stat allocation requests
     - Update character stats on allocation
     - Recalculate derived stats (health, mana, attack, defense)
     - _Requirements: 4.5_
 
-  - [~] 11.3 Implement skill unlocking
+  - [x] 11.3 Implement skill unlocking
     - Create skill unlock system based on level thresholds
     - Define skill trees for each character class
     - Add skill unlock notifications

@@ -10,7 +10,7 @@
 
 ### Hệ thống đang chạy như thế nào?
 
-**Trạng thái:** 🟢 ĐANG VẬN HÀNH (Phase 5 - Task 1 hoàn thành)
+**Trạng thái:** 🟢 ĐANG VẬN HÀNH (Phase 5 - Task 3 hoàn thành)
 
 Team dev đã **hoàn thành Phase 4** với 4/5 tasks và đang tiến hành **Phase 5**. Hệ thống đã được validate trong thực tế với kết quả xuất sắc:
 
@@ -24,7 +24,9 @@ Team dev đã **hoàn thành Phase 4** với 4/5 tasks và đang tiến hành **
 
 **Phase 5 Progress:**
 - ✅ Task 1: LootService (hoàn thành)
-- 🔄 Task 2-6: Đang lên kế hoạch
+- ✅ Task 2: Combat Property Tests Phase 2 (hoàn thành)
+- ✅ Task 3: Stat Allocation System (hoàn thành)
+- 🔄 Task 4-6: Đang tiến hành (continuous execution mode)
 
 ---
 

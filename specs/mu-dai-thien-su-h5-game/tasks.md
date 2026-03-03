@@ -380,11 +380,12 @@ The implementation follows these principles:
     - **Validates: Requirements 4.1, 4.2, 4.3, 4.5, 4.6, 6.1**
     - **Status: COMPLETED** - 15 property tests passing (100 runs each)
 
-  - [~] 11.6 Write unit tests for progression
+  - [x] 11.6 Write unit tests for progression
     - Test experience threshold calculations
     - Test stat point allocation validation
     - Test skill unlock conditions
     - _Requirements: 4.1, 4.2, 4.5, 4.6_
+    - **Status: COMPLETED** - 39 unit tests passing
 
 - [ ] 12. Inventory and item system
   - [~] 12.1 Create item data models

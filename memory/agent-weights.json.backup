@@ -1,0 +1,60 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-03-05T00:00:00Z",
+  "updateFrequency": "weekly",
+  "weights": {
+    "tech-lead": {
+      "current": 2.5,
+      "base": 2.5,
+      "accuracy": null,
+      "decisionsTracked": 0,
+      "lastAdjusted": null,
+      "adjustmentHistory": []
+    },
+    "qa-lead": {
+      "current": 2.5,
+      "base": 2.5,
+      "accuracy": null,
+      "decisionsTracked": 0,
+      "lastAdjusted": null,
+      "adjustmentHistory": []
+    },
+    "devops-lead": {
+      "current": 2.0,
+      "base": 2.0,
+      "accuracy": null,
+      "decisionsTracked": 0,
+      "lastAdjusted": null,
+      "adjustmentHistory": []
+    },
+    "product-owner": {
+      "current": 2.0,
+      "base": 2.0,
+      "accuracy": null,
+      "decisionsTracked": 0,
+      "lastAdjusted": null,
+      "adjustmentHistory": []
+    },
+    "developer": {
+      "current": 1.5,
+      "base": 1.5,
+      "accuracy": null,
+      "decisionsTracked": 0,
+      "lastAdjusted": null,
+      "adjustmentHistory": []
+    }
+  },
+  "teamMetrics": {
+    "averageAccuracy": null,
+    "totalDecisions": 0,
+    "successfulDecisions": 0,
+    "consensusRate": null
+  },
+  "adjustmentRules": {
+    "minDecisionsBeforeAdjustment": 20,
+    "adjustmentFactor": 0.05,
+    "maxWeightMultiplier": 2.0,
+    "minWeightMultiplier": 0.5,
+    "accuracyThreshold": 0.85
+  }
+}

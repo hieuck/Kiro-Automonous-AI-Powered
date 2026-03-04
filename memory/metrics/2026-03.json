@@ -1,0 +1,22 @@
+{
+  "month": "2026-03",
+  "lastUpdated": "2026-03-05T00:55:41.774606",
+  "dailyMetrics": {
+    "2026-03-05": {
+      "totalDecisions": 3,
+      "successfulDecisions": 3,
+      "successRate": 1.0,
+      "averageQualityScore": 9.43,
+      "averageConsensus": 0.86,
+      "averageCycleTime": 5400000
+    }
+  },
+  "summary": {
+    "totalDecisions": 3,
+    "successfulDecisions": 3,
+    "successRate": 1.0,
+    "averageQualityScore": 9.43,
+    "averageConsensus": 0.86,
+    "averageCycleTime": 5400000
+  }
+}

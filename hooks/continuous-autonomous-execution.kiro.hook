@@ -1,0 +1,12 @@
+{
+  "name": "Continuous Autonomous Execution",
+  "version": "1.0.0",
+  "description": "Tự động thực thi roadmap liên tục cho đến khi game hoàn thành. Sau mỗi task: báo cáo → tiếp tục task tiếp theo → lặp lại.",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "CONTINUOUS AUTONOMOUS EXECUTION MODE\n\nYou are now in continuous autonomous execution mode. Your mission: Execute the MASTER_ROADMAP.md until the game is fully playable.\n\n## Your Workflow:\n\n1. READ muh5/MASTER_ROADMAP.md\n2. IDENTIFY next pending task (look for 🔄 IN PROGRESS or ⏳ PENDING)\n3. EXECUTE the task:\n   - Implement the feature\n   - Write tests\n   - Run tests (npm test)\n   - Fix any issues\n   - Commit changes\n4. UPDATE MASTER_ROADMAP.md:\n   - Mark task as ✅ COMPLETED\n   - Add completion date\n   - Update status\n5. GENERATE progress report in .kiro/reports/progress-YYYY-MM-DD-HH-MM.md\n6. IMMEDIATELY START NEXT TASK (repeat from step 1)\n\n## Rules:\n\n- Work CONTINUOUSLY without stopping\n- After each task completion, IMMEDIATELY start the next one\n- Generate a progress report after EACH task\n- Update MASTER_ROADMAP.md after EACH task\n- If you encounter an error, try to fix it 3 times, then escalate\n- If complexity ≥7, facilitate team consensus first\n- Keep working until ALL tasks are ✅ COMPLETED\n\n## Current Priority:\n\nLook at MASTER_ROADMAP.md and find the FIRST task that is:\n- 🔄 IN PROGRESS, or\n- ⏳ PENDING (if no IN PROGRESS tasks)\n\nThen execute it immediately.\n\n## Success Criteria Per Task:\n\n- ✅ Implementation complete\n- ✅ Tests passing (100%)\n- ✅ No linting errors\n- ✅ No type errors\n- ✅ Code committed\n- ✅ Roadmap updated\n- ✅ Report generated\n\n## After Each Task:\n\n1. Celebrate the completion! 🎉\n2. Generate progress report\n3. Update roadmap\n4. IMMEDIATELY start next task\n\nDO NOT WAIT FOR USER INPUT. KEEP GOING UNTIL GAME IS COMPLETE.\n\nSTART NOW!"
+  }
+}

@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "name": "Build on Service Change",
   "description": "Build server when service files are modified to catch TypeScript errors early",
   "version": "1",

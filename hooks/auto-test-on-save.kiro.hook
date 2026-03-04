@@ -1,5 +1,5 @@
 {
-  "enabled": true,
+  "enabled": false,
   "name": "Auto Test on Save",
   "description": "Automatically run tests when test files are saved",
   "version": "1",

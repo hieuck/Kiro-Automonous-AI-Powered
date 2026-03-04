@@ -4,7 +4,7 @@
   "description": "Automatically analyzes spec progress, identifies next logical task, and executes it autonomously following best practices",
   "version": "1",
   "when": {
-    "type": "agentStop"
+    "type": "userTriggered"
   },
   "then": {
     "type": "askAgent",

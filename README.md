@@ -25,11 +25,12 @@ This directory contains the complete infrastructure for an autonomous AI develop
    - Code review automation
    - Metrics collection
 
-3. **Background Automation** 🤖
-   - Service watchers
-   - Quality watchers
-   - Automated hooks
-   - Continuous monitoring
+3. **Automated Hooks** 🤖
+   - Decision logging
+   - Quality gates
+   - Metrics collection
+   - Pattern analysis
+   - Weekly/monthly assessments
 
 4. **Knowledge Management** 📚
    - Comprehensive steering files
@@ -41,12 +42,25 @@ This directory contains the complete infrastructure for an autonomous AI develop
 
 ## 🚀 Quick Start
 
-### For Self-Evolution Features
+### View Current Status
 
 ```bash
-# Collect metrics (requires Python 3.6+)
+# View metrics
 python .kiro/scripts/collect-metrics.py
 
+# View agent weights
+cat .kiro/memory/agent-weights.json
+
+# View latest reports
+ls -lt .kiro/reports/ | head -5
+
+# View decision history
+ls .kiro/memory/decisions/
+```
+
+### Run Analysis (when enough data)
+
+```bash
 # Update agent weights (requires 20+ decisions)
 python .kiro/scripts/update-agent-weights.py
 
@@ -54,18 +68,20 @@ python .kiro/scripts/update-agent-weights.py
 python .kiro/scripts/analyze-patterns.py
 ```
 
-### For Background Automation
+### Explore Infrastructure
 
 ```bash
-# Install dependencies
-cd .kiro/scripts
-npm install
+# View hooks
+ls .kiro/hooks/
 
-# Start service watcher
-bash .kiro/scripts/manage-watchers.sh start service
+# View steering files
+ls .kiro/steering/
 
-# Start quality watcher
-bash .kiro/scripts/manage-watchers.sh start quality
+# View skills
+ls .kiro/skills/
+
+# View reports
+ls .kiro/reports/
 ```
 
 ---

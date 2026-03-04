@@ -1,0 +1,12 @@
+{
+  "name": "Pre-Execution Quality Gate",
+  "version": "1.0.0",
+  "description": "Validate task readiness before execution",
+  "when": {
+    "type": "preTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Run pre-execution quality gate checks: 1) Assess complexity (1-10), 2) Assess risk (low/medium/high/critical), 3) Validate dependencies are available, 4) Check resource availability. If complexity ≥5 OR risk ≥medium, require team consensus. Document assessment."
+  }
+}

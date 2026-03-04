@@ -1,5 +1,7 @@
 ---
-inclusion: auto
+inclusion: always
+name: vietnamese-communication
+description: Vietnamese communication guidelines. Use when user communicates in Vietnamese or requests Vietnamese responses.
 ---
 
 # Giao Tiếp Tiếng Việt

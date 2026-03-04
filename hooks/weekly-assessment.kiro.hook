@@ -1,0 +1,12 @@
+{
+  "name": "Weekly Assessment",
+  "version": "1.0.0",
+  "description": "Automated weekly team performance assessment (every Monday 9 AM)",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Conduct weekly assessment: 1) Collect last week's metrics from .kiro/memory/metrics/, 2) Analyze decision accuracy, consensus rate, quality scores, cycle time, 3) Identify issues and bottlenecks, 4) Propose improvements, 5) Generate report at .kiro/reports/weekly-assessment-[date].md, 6) Update agent weights if needed (≥20 decisions). Follow the format in autonomous-mode.md."
+  }
+}

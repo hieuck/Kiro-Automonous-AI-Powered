@@ -1,0 +1,12 @@
+{
+  "name": "Post-Execution Quality Gate",
+  "version": "1.0.0",
+  "description": "Validate quality standards after task completion",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Run post-execution quality gate: 1) Verify all tests pass, 2) Check coverage ≥80%, 3) Run linting (no errors), 4) Check type errors (none), 5) Run security scan, 6) Verify performance benchmarks. Calculate quality score (0-10). If score <7.0, BLOCK merge and request rework. Document results."
+  }
+}

@@ -1,0 +1,12 @@
+{
+  "name": "Decision Logging",
+  "version": "1.0.0",
+  "description": "Automatically log all significant decisions for learning and improvement",
+  "when": {
+    "type": "postTaskExecution"
+  },
+  "then": {
+    "type": "askAgent",
+    "prompt": "Log this decision to .kiro/memory/decisions/ following the schema in README.md. Include: task type, complexity, agent responses, consensus calculation, and outcome. Generate unique ID (dec-YYYY-MM-DD-NNN) and save as JSON file."
+  }
+}

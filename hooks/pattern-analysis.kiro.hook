@@ -1,0 +1,13 @@
+{
+  "name": "Pattern Analysis",
+  "version": "1.0.0",
+  "description": "Analyze decision patterns weekly to identify successful patterns and anti-patterns",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "bash .kiro/scripts/analyze-patterns.sh",
+    "timeout": 120
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "name": "Daily Metrics Collection",
+  "version": "1.0.0",
+  "description": "Automatically collect metrics daily for continuous monitoring",
+  "when": {
+    "type": "userTriggered"
+  },
+  "then": {
+    "type": "runCommand",
+    "command": "bash .kiro/scripts/collect-metrics.sh",
+    "timeout": 60
+  }
+}
